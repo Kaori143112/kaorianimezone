@@ -145,6 +145,54 @@
     .wish-box input {flex:1;min-width:130px;background:var(--bg);border:1px solid var(--line);border-radius:12px;color:var(--ink);outline:none;padding:13px 14px;font-size:12px;}
     .wish-box button {border:0;border-radius:12px;color:#29212c;background:var(--pink);padding:13px 17px;font-size:12px;font-weight:900;}
     #wish-response {margin-top:8px;color:var(--violet);font-size:12px;min-height:19px;}
+
+    /* KAORI / message celebration: distinct anime and gamer effects */
+    .kaori-wish-area{min-width:0}
+    .kaori-wish-wall{margin-top:17px;border-radius:17px;padding:15px;background:color-mix(in srgb,var(--panel2) 78%,transparent);border:1px solid var(--line)}
+    .kaori-wish-wall[hidden],.kaori-party-layer[hidden]{display:none!important}
+    .kaori-wish-wall-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:11px}
+    .kaori-wish-wall-head strong{font-size:12px;color:var(--ink)}
+    .kaori-wish-wall-head button{background:none;color:var(--pink);border:1px solid var(--line);border-radius:999px;font-size:10px;font-weight:800;padding:7px 9px;cursor:pointer}
+    .kaori-wish-wall ol{margin:0 0 10px;padding:0;list-style:none;display:grid;gap:8px;max-height:210px;overflow:auto}
+    .kaori-wish-wall li{padding:10px 12px;background:var(--bg);border:1px solid var(--line);border-radius:12px;color:var(--ink);word-break:break-word;font-size:12px;line-height:1.6}
+    .kaori-wish-wall li time{display:block;color:var(--sub);font-size:10px;margin-top:4px}
+    .kaori-wish-wall small{color:var(--sub);font-size:10px;line-height:1.5;display:block}
+    #kaori-guestbook.kaori-guestbook-glow{animation:kaoriGuestGlow 1.2s ease-out}
+    @keyframes kaoriGuestGlow{0%,100%{box-shadow:0 0 0 0 transparent}32%{box-shadow:0 0 55px 13px #ffbfcf66,0 0 100px 25px #9ebcfa22;border-color:#ffc7f1}}
+    .kaori-party-layer{position:fixed;inset:0;z-index:10000;pointer-events:none;display:grid;place-items:center;padding:18px;isolation:isolate;--event:#8ddcff;--event2:#b4a9ff}
+    .kaori-party-layer[data-theme="honoka"]{--event:#ffd46e;--event2:#ff8fbb}
+    .kaori-party-layer[data-theme="jett"]{--event:#82efff;--event2:#9a9aff}
+    .kaori-party-layer[data-theme="critical"]{--event:#ffb376;--event2:#ff6f8e}
+    .kaori-party-layer[data-theme="cosmic"]{--event:#b3a6ff;--event2:#7edcfa}
+    .kaori-party-layer[data-theme="anime"]{--event:#fdbbdc;--event2:#b1a0ff}
+    .kaori-party-vignette{position:absolute;inset:0;z-index:-1;background:radial-gradient(circle at 50% 46%,color-mix(in srgb,var(--event) 35%,transparent),transparent 56%),linear-gradient(120deg,#15132c99,#10121bc4);animation:kaoriVignette 3.9s ease both}
+    .kaori-party-layer[data-theme="jett"] .kaori-party-vignette{background:radial-gradient(circle at 50% 43%,#a7faff77,transparent 58%),linear-gradient(130deg,#10304bbb,#0b1639cc)}
+    .kaori-party-card{pointer-events:auto;width:min(440px,95vw);max-height:min(95vh,700px);overflow:auto;border:2px solid color-mix(in srgb,var(--event) 58%,white);border-radius:26px;background:linear-gradient(155deg,#25243eeF,#171827f9);padding:21px 25px 20px;text-align:center;color:#fff;box-shadow:0 25px 90px #0009,0 0 60px color-mix(in srgb,var(--event) 37%,transparent);animation:kaoriPartyCard 650ms cubic-bezier(.15,1.1,.28,1) both}
+    .kaori-party-top{display:flex;justify-content:space-between;align-items:center;gap:10px}
+    .kaori-party-badge{display:inline-flex;padding:7px 12px;border-radius:999px;background:color-mix(in srgb,var(--event) 18%,#171827);border:1px solid color-mix(in srgb,var(--event) 45%,transparent);color:var(--event);font:900 10px 'Outfit',sans-serif;letter-spacing:.14em}
+    .kaori-party-close{width:30px;height:30px;border-radius:50%;background:#fff1;color:#fff;cursor:pointer;border:1px solid #fff3;font-size:22px;line-height:1}
+    .kaori-party-visual{position:relative;height:148px;display:grid;place-items:center;margin:2px auto 8px}
+    .kaori-party-disc{position:absolute;width:143px;height:143px;border-radius:50%;background:radial-gradient(circle,#fff9 0%,var(--event) 26%,color-mix(in srgb,var(--event2) 50%,transparent) 53%,transparent 72%);opacity:.67;animation:kaoriPulse 2s ease-in-out infinite}
+    #kaori-party-image{height:135px;width:135px;border:4px solid #fff9;border-radius:25px;object-fit:cover;z-index:1;box-shadow:0 12px 40px #0007;transform:rotate(-7deg)}
+    #kaori-party-icon{position:relative;z-index:1;font-size:93px;line-height:1;filter:drop-shadow(0 8px 14px #1119)}
+    .kaori-party-title{font:900 clamp(28px,6vw,40px)/1.05 'Outfit',sans-serif;letter-spacing:-.04em;text-shadow:0 3px 22px color-mix(in srgb,var(--event) 60%,transparent)}
+    .kaori-party-subtitle{font-size:12px;color:#e0dbea;margin:9px 0 16px;line-height:1.6}
+    .kaori-party-quote{background:#0f1225;border:1px solid color-mix(in srgb,var(--event) 44%,transparent);border-radius:17px;padding:13px 17px;text-align:left}
+    .kaori-party-quote span{font-size:10px;font-weight:900;letter-spacing:.15em;color:var(--event)}
+    .kaori-party-quote p{font-size:16px;line-height:1.65;margin:7px 0 0;white-space:pre-wrap;overflow-wrap:anywhere;color:#fff}
+    .kaori-party-footer{margin-top:14px;font-size:9px;letter-spacing:.09em;color:#cbc9db;font-weight:800}
+    .kaori-party-effects{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+    .kaori-party-particle{position:absolute;left:50%;top:46%;z-index:1;opacity:0;color:var(--event);font-size:26px;filter:drop-shadow(0 0 7px var(--event));animation:kaoriParticle 1.2s ease-out var(--delay,0ms) forwards}
+    .kaori-party-knife{position:absolute;left:50%;top:43%;z-index:1;width:12px;height:80px;background:linear-gradient(90deg,#fff 0%,#c9ffff 48%,#53baff 52%,#fff 100%);clip-path:polygon(50% 0%,100% 74%,66% 100%,34% 100%,0% 74%);box-shadow:0 0 12px #aafaff;animation:kaoriBlade 1.1s ease-out var(--delay,0ms) both}
+    @keyframes kaoriGuestGlow{0%,100%{box-shadow:0 0 0 transparent}38%{box-shadow:0 0 55px 12px #ffbfcf6b,0 0 90px 27px #bfa4fa66}}
+    @keyframes kaoriVignette{0%{opacity:0}16%,78%{opacity:1}100%{opacity:.82}}
+    @keyframes kaoriPartyCard{0%{opacity:0;transform:translateY(45px) scale(.65) rotate(-5deg)}65%{opacity:1;transform:translateY(-8px) scale(1.035) rotate(1deg)}100%{opacity:1;transform:translateY(0) scale(1) rotate(0)}}
+    @keyframes kaoriPulse{0%,100%{transform:scale(.9);opacity:.45}50%{transform:scale(1.16);opacity:.8}}
+    @keyframes kaoriParticle{0%{opacity:0;transform:translate(0,0) scale(.2)}12%{opacity:1}100%{opacity:0;transform:translate(var(--dx),var(--dy)) scale(1.45) rotate(var(--spin))}}
+    @keyframes kaoriBlade{0%{opacity:0;transform:translate(0,0) rotate(var(--angle)) scale(.25)}15%{opacity:1}100%{opacity:0;transform:translate(var(--dx),var(--dy)) rotate(var(--angle)) scale(1.15)}}
+    @media(max-width:520px){.kaori-party-card{padding:16px 18px}.kaori-party-visual{height:120px}#kaori-party-image{height:110px;width:110px}#kaori-party-icon{font-size:73px}.kaori-party-disc{height:120px;width:120px}.kaori-party-quote p{font-size:14px}}
+    @media(prefers-reduced-motion:reduce){.kaori-party-particle,.kaori-party-knife{display:none}.kaori-party-card,.kaori-party-vignette,.kaori-party-disc,#kaori-guestbook.kaori-guestbook-glow{animation:none}}
+
     footer {border-top:1px solid var(--line);padding:28px 0 38px;color:var(--sub);font-size:11px;}
     .footer-content {display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;}
     .footer-content strong {color:var(--ink);font-family:'Outfit';letter-spacing:.1em;font-size:17px;}
@@ -630,10 +678,22 @@ html.kaori-edit-mode .kaori-selected {outline:3px solid #f3b9ff!important;outlin
           <a class="social-card" href="https://www.tiktok.com/@kaori143112" target="_blank" rel="noopener noreferrer"><div class="social-title"><div class="social-icon" aria-hidden="true">♪</div><div><h3>TikTok</h3><p>@kaori143112 · Anime edits & more</p></div></div><span class="social-arrow" aria-hidden="true">↗</span></a>
           <a class="social-card" href="https://www.facebook.com/share/1d78gZJeC5/" target="_blank" rel="noopener noreferrer"><div class="social-title"><div class="social-icon" aria-hidden="true">f</div><div><h3>Facebook</h3><p>KAORI · My page & community</p></div></div><span class="social-arrow" aria-hidden="true">↗</span></a>
         </div>
-        <div class="guestbook reveal"><div><h3>Drop a message 🎮</h3><p>Send a cheerful note to this page. Your note stays in this browser only — it isn't sent to me or posted publicly.</p></div><div><form class="wish-box" id="wish-form"><input id="wish-input" required maxlength="120" aria-label="Your note" placeholder="A little message, just because..."/><button type="submit">Send a star ✦</button></form><p id="wish-response" role="status" aria-live="polite"></p></div></div>
+        <div class="guestbook reveal" id="kaori-guestbook"><div><h3>Drop a message 🎮</h3><p>Write a note, unlock a random anime or gaming surprise, and see your message light up! Notes stay on your own device — they are not sent to me or posted publicly.</p></div><div class="kaori-wish-area"><form class="wish-box" id="wish-form"><input id="wish-input" required maxlength="120" aria-label="Your note" placeholder="Type your message to unlock a surprise..." autocomplete="off"/><button type="submit">Activate ✦</button></form><p id="wish-response" role="status" aria-live="polite">Your messages are private to this browser.</p><div class="kaori-wish-wall" id="kaori-wish-wall" hidden><div class="kaori-wish-wall-head"><strong>✦ Your message log</strong><button type="button" id="kaori-wish-clear">Clear local notes</button></div><ol id="kaori-wish-list" aria-label="Your messages saved on this device"></ol><small>Only visible in this browser. Not delivered to KAORI or other visitors.</small></div></div></div>
       </div>
     </section>
   </main>
+  <div id="kaori-party-layer" class="kaori-party-layer" hidden aria-hidden="true">
+    <div class="kaori-party-vignette" aria-hidden="true"></div>
+    <div id="kaori-party-effects" class="kaori-party-effects" aria-hidden="true"></div>
+    <div class="kaori-party-card" role="status" aria-live="polite">
+      <div class="kaori-party-top"><span class="kaori-party-badge" id="kaori-party-badge">EVENT ACTIVATED</span><button class="kaori-party-close" type="button" id="kaori-party-close" aria-label="Close animation">×</button></div>
+      <div class="kaori-party-visual"><div class="kaori-party-disc"></div><img id="kaori-party-image" alt="" hidden/><span id="kaori-party-icon" aria-hidden="true">✦</span></div>
+      <div class="kaori-party-title" id="kaori-party-title">SPECIAL MOVE!</div>
+      <p class="kaori-party-subtitle" id="kaori-party-subtitle">Message received by your browser</p>
+      <div class="kaori-party-quote"><span>YOUR MESSAGE</span><p id="kaori-party-message"></p></div>
+      <div class="kaori-party-footer">✦ SAVED ON THIS DEVICE · NOT SENT TO KAORI ✦</div>
+    </div>
+  </div>
   <footer><div class="container footer-content"><strong>KAORI<span style="color:var(--pink)">.</span> ✦</strong><p>Powered by anime, gaming, and late-night edits. Fan-made, not affiliated with any studios.</p><p>Art belongs to its respective rights holders. <a href="#home">Back to top ↑</a></p></div></footer>
   <dialog id="edit-dialog" aria-labelledby="dialog-title"><button type="button" class="close-dialog" id="close-dialog" aria-label="Close dialog">×</button><span class="small-label">FAN EDIT MOODBOARD</span><h3 id="dialog-title"></h3><p id="dialog-desc"></p><a class="modal-link" href="https://www.tiktok.com/@kaori143112" target="_blank" rel="noopener noreferrer">Explore my TikTok ↗</a></dialog>
 
@@ -682,10 +742,128 @@ html.kaori-edit-mode .kaori-selected {outline:3px solid #f3b9ff!important;outlin
       document.getElementById('close-dialog').addEventListener('click',()=>dialog.close());
       dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close();});
 
-      document.getElementById('wish-form').addEventListener('submit', e => {
-        e.preventDefault(); const input=document.getElementById('wish-input'); const msg=input.value.trim();if(!msg)return;
-        try { localStorage.setItem('kaori-local-wish',msg); } catch {}
-        document.getElementById('wish-response').textContent='✦ Star saved in this browser! Thank you for the sunshine ♡';input.value='';
+      // Personal-only notes and random anime/game celebrations (no backend or public posting).
+      const wishForm = document.getElementById('wish-form');
+      const wishInput = document.getElementById('wish-input');
+      const wishResponse = document.getElementById('wish-response');
+      const wishWall = document.getElementById('kaori-wish-wall');
+      const wishList = document.getElementById('kaori-wish-list');
+      const wishClear = document.getElementById('kaori-wish-clear');
+      const partyLayer = document.getElementById('kaori-party-layer');
+      const partyEffects = document.getElementById('kaori-party-effects');
+      const partyMessage = document.getElementById('kaori-party-message');
+      const partyImage = document.getElementById('kaori-party-image');
+      const partyIcon = document.getElementById('kaori-party-icon');
+      const guestbook = document.getElementById('kaori-guestbook');
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      const partyEvents = [
+        {theme:'jett',badge:'AGENT ULTIMATE',title:'BLADE STORM!',subtitle:'Jett-inspired kunai rush · KNIVES OUT!',icon:'⚔️',sparks:['✦','💨','⚡'],art:null},
+        {theme:'honoka',badge:'SCHOOL IDOL EVENT',title:'SUNSHINE RUSH!',subtitle:'Honoka appears! Your message gets a smile ☀️',icon:'☀️',sparks:['🌸','✨','🎶'],art:'honoka'},
+        {theme:'critical',badge:'GAMER MOMENT',title:'CRITICAL HIT!',subtitle:'Direct hit! You just unlocked a perfect combo.',icon:'💥',sparks:['💥','⚡','⭐'],art:null},
+        {theme:'cosmic',badge:'STAR RAIL MOMENT',title:'ASTRAL WARP!',subtitle:'A message from another galaxy has arrived.',icon:'🚀',sparks:['🌠','⭐','💫'],art:null},
+        {theme:'anime',badge:'ANIME CUT-IN',title:'POWER-UP MODE!',subtitle:'The main character has entered the scene.',icon:'🌸',sparks:['🌸','✨','💖'],art:'anime'}
+      ];
+      let wishes = [];
+      try {
+        const existing = JSON.parse(localStorage.getItem('kaori-local-wishes-v2') || '[]');
+        if (Array.isArray(existing)) wishes = existing.filter(item=>item && typeof item.text === 'string' && item.text.trim()).slice(0,8).map(item=>({text:item.text.slice(0,120),at:typeof item.at === 'number'?item.at:Date.now()}));
+        if (!wishes.length) {
+          const older = localStorage.getItem('kaori-local-wish');
+          if (older && older.trim()) wishes = [{text:older.slice(0,120),at:Date.now()}];
+        }
+      } catch {}
+      function renderWishLog(){
+        wishList.replaceChildren();
+        wishWall.hidden = wishes.length === 0;
+        for (const item of wishes) {
+          const li=document.createElement('li');
+          const message=document.createElement('span');
+          message.textContent=item.text;
+          const time=document.createElement('time');
+          time.dateTime=new Date(item.at).toISOString();
+          time.textContent=new Date(item.at).toLocaleString(undefined,{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'});
+          li.append(message,time);
+          wishList.appendChild(li);
+        }
+      }
+      renderWishLog();
+      function closeKaoriParty(){
+        clearTimeout(closeKaoriParty.timer);
+        partyLayer.hidden = true;
+        partyLayer.setAttribute('aria-hidden','true');
+        partyEffects.replaceChildren();
+      }
+      document.getElementById('kaori-party-close').addEventListener('click',closeKaoriParty);
+      document.addEventListener('keydown',e=>{if(e.key==='Escape' && !partyLayer.hidden)closeKaoriParty();});
+      function triggerKaoriParty(msg){
+        const event=partyEvents[Math.floor(Math.random()*partyEvents.length)];
+        closeKaoriParty();
+        partyLayer.dataset.theme=event.theme;
+        document.getElementById('kaori-party-badge').textContent=event.badge;
+        document.getElementById('kaori-party-title').textContent=event.title;
+        document.getElementById('kaori-party-subtitle').textContent=event.subtitle;
+        partyMessage.textContent=msg;
+        partyIcon.textContent=event.icon;
+        partyIcon.hidden=false;
+        partyImage.hidden=true;
+        partyImage.removeAttribute('src');
+        let art='';
+        if(event.art==='honoka')art=document.querySelector('.honoka-image')?.currentSrc || '';
+        if(event.art==='anime'){
+          const options=Array.from(document.querySelectorAll('#favorites .anime-card img')).filter(img=>img.complete && img.naturalWidth>0);
+          if(options.length) art=options[Math.floor(Math.random()*options.length)].currentSrc;
+        }
+        if(art) {
+          partyImage.onerror=()=>{partyImage.hidden=true;partyIcon.hidden=false;};
+          partyImage.onload=()=>{if(!partyLayer.hidden){partyImage.hidden=false;partyIcon.hidden=true;}};
+          partyImage.src=art;
+          if(partyImage.complete && partyImage.naturalWidth>0){partyImage.hidden=false;partyIcon.hidden=true;}
+        }
+        partyLayer.hidden=false;
+        partyLayer.setAttribute('aria-hidden','false');
+        guestbook.classList.remove('kaori-guestbook-glow');
+        void guestbook.offsetWidth;
+        guestbook.classList.add('kaori-guestbook-glow');
+        if(!reduceMotion.matches){
+          const count=event.theme==='jett'?12:16;
+          for(let i=0;i<count;i++){
+            const particle=document.createElement('span');
+            const radians=(i/count)*Math.PI*2+Math.random()*.3;
+            const distance=120+Math.random()*Math.min(240,window.innerWidth*.34);
+            particle.className=event.theme==='jett' && i<9?'kaori-party-knife':'kaori-party-particle';
+            particle.style.setProperty('--dx',Math.round(Math.cos(radians)*distance)+'px');
+            particle.style.setProperty('--dy',Math.round(Math.sin(radians)*distance)+'px');
+            particle.style.setProperty('--delay',(i%5)*65+'ms');
+            particle.style.setProperty('--angle',Math.round(radians*180/Math.PI+90)+'deg');
+            particle.style.setProperty('--spin',Math.round(120+Math.random()*240)+'deg');
+            if(!particle.classList.contains('kaori-party-knife'))particle.textContent=event.sparks[i%event.sparks.length];
+            partyEffects.appendChild(particle);
+          }
+        }
+        closeKaoriParty.timer=setTimeout(closeKaoriParty,5600);
+      }
+      wishForm.addEventListener('submit',e=>{
+        e.preventDefault();
+        const msg=wishInput.value.trim().slice(0,120);
+        if(!msg)return;
+        wishes.unshift({text:msg,at:Date.now()});
+        wishes=wishes.slice(0,8);
+        let stored=false;
+        try {
+          localStorage.setItem('kaori-local-wishes-v2',JSON.stringify(wishes));
+          localStorage.removeItem('kaori-local-wish');
+          stored=true;
+        } catch {}
+        renderWishLog();
+        triggerKaoriParty(msg);
+        wishResponse.textContent=stored?'✦ Surprise unlocked! Your note was saved in this browser only.':'✦ Surprise unlocked! Your note is visible here for this visit (browser storage unavailable).';
+        wishInput.value='';
+      });
+      wishClear.addEventListener('click',()=>{
+        wishes=[];
+        try{localStorage.removeItem('kaori-local-wishes-v2');localStorage.removeItem('kaori-local-wish');}catch{}
+        renderWishLog();
+        wishResponse.textContent='Your local message history has been cleared.';
       });
       const observer = 'IntersectionObserver' in window ? new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target);}}),{threshold:.08}) : null;
       document.querySelectorAll('.reveal').forEach(el=>{if(observer)observer.observe(el);else el.classList.add('is-visible');});
