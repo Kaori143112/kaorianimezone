@@ -168,36 +168,36 @@
       .follow-btn{display:none}.hero-title{font-size:clamp(48px,11vw,61px)}.art-stage{height:390px}.side-tag{font-size:20px;padding:10px;right:0}.card-note{left:9px;bottom:35px}.star-a{right:4px}.star-b{left:0}.anime-grid{grid-template-columns:1fr}.card-art{height:290px}.card-info p{min-height:auto}.edits-layout{grid-template-columns:1fr}.edit-big{grid-row:auto;min-height:390px}.edit-tile{min-height:260px}.section-heading{margin-bottom:25px}.heading{font-size:35px}.filter-row{gap:6px}.filter-btn{font-size:11px;padding:10px 13px}.about-box{padding:18px}.about-copy{padding:8px 6px 13px}.social-grid{grid-template-columns:1fr}.social-card{padding:23px}.guestbook{padding:23px}.footer-content{gap:12px}.footer-content p{margin:0}}
     @media(prefers-reduced-motion:reduce) {html{scroll-behavior:auto}.marquee-track{animation:none}.reveal{opacity:1;transform:none;transition:none}*,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important}}
 
-    /* KAORI / Anime archive & favorite games — text-first cards, no broken external image dependencies */
+    /* KAORI / Anime and games styled to match "My favourite universes" */
     .kaori-library,.kaori-games{padding:98px 0 0}
     .kaori-library .section-heading,.kaori-games .section-heading{margin-bottom:34px}
-    .kaori-collection{margin-top:40px}
-    .kaori-collection + .kaori-collection{margin-top:62px}
+    .kaori-collection{margin-top:40px}.kaori-collection+.kaori-collection{margin-top:62px}
     .kaori-collection-header{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:19px}
     .kaori-collection-kicker{font-size:10px;font-weight:900;letter-spacing:.18em;color:var(--peach)}
     .kaori-collection-header h3{font:800 clamp(25px,3.1vw,36px)/1.2 'Outfit',sans-serif;letter-spacing:-.04em;margin:8px 0 0}
     .kaori-collection-header p{font-size:12px;line-height:1.6;color:var(--sub);max-width:320px;margin:0}
-    .kaori-pick-grid,.kaori-game-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-    .kaori-pick{position:relative;min-height:205px;background:var(--panel);border:1px solid var(--line);border-radius:19px;padding:20px 21px 18px;overflow:hidden;transition:transform .2s,border-color .2s;display:flex;flex-direction:column}
-    .kaori-pick::before{content:'';position:absolute;inset:0 0 auto;height:4px;background:var(--pick-accent)}
-    .kaori-pick-trending{--pick-accent:linear-gradient(90deg,#f0af78,#ff83aa)}
-    .kaori-pick-classics{--pick-accent:linear-gradient(90deg,#c9a9ff,#8db8ff)}
-    .kaori-pick-horror{--pick-accent:linear-gradient(90deg,#955b9c,#ef6f82);background:linear-gradient(135deg,var(--panel),color-mix(in srgb,var(--panel) 79%,#5f2949))}
-    .kaori-pick:hover,.kaori-game-card:hover{transform:translateY(-4px);border-color:var(--violet)}
-    .kaori-pick-top,.kaori-game-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
-    .kaori-pick-emoji{width:37px;height:37px;display:grid;place-items:center;border-radius:11px;background:color-mix(in srgb,var(--panel2) 80%,#fff);font-size:20px}
-    .kaori-pick-no,.kaori-game-index{font:800 10px 'Outfit',sans-serif;color:var(--sub);letter-spacing:.15em}
-    .kaori-pick h4{font:800 19px/1.25 'Outfit',sans-serif;letter-spacing:-.025em;margin:17px 0 7px}
-    .kaori-pick p{font-size:12px;line-height:1.55;color:var(--sub);margin:0 0 15px}
-    .kaori-pick-meta{font-size:10px;font-weight:800;letter-spacing:.05em;color:var(--peach);margin-top:auto}
-    .kaori-game-card{min-height:220px;border:1px solid var(--line);border-radius:21px;background:radial-gradient(circle at 100% 0%,color-mix(in srgb,var(--game-accent) 20%,transparent),transparent 64%),var(--panel);padding:24px;transition:transform .2s,border-color .2s;display:flex;flex-direction:column}
-    .kaori-game-symbol{font-size:27px;display:grid;place-items:center;width:49px;height:49px;border-radius:15px;background:color-mix(in srgb,var(--game-accent) 23%,transparent)}
-    .kaori-game-card h3{font:800 clamp(22px,2.4vw,29px)/1.17 'Outfit',sans-serif;margin:18px 0 8px;letter-spacing:-.03em}
-    .kaori-game-card p{font-size:12px;line-height:1.65;color:var(--sub);margin:0 0 17px}
-    .kaori-game-tag{align-self:start;margin-top:auto;font-size:9px;letter-spacing:.12em;font-weight:900;color:var(--game-accent);border:1px solid color-mix(in srgb,var(--game-accent) 38%,transparent);border-radius:50px;padding:7px 11px}
+    .kaori-pick-grid,.kaori-game-grid{gap:20px}
+    .kaori-library-card,.kaori-game-cover-card{height:100%;display:flex;flex-direction:column}
+    .kaori-library-card .card-info,.kaori-game-cover-card .card-info{flex:1;display:flex;flex-direction:column}
+    .kaori-library-card .card-info p,.kaori-game-cover-card .card-info p{margin-bottom:15px}
+    .kaori-library-card .card-foot,.kaori-game-cover-card .card-foot{margin-top:auto}
+    .kaori-card-art{height:283px;isolation:isolate;background:linear-gradient(130deg,#9e91c7,#f5c6ac)}
+    .kaori-trending-cover{background:linear-gradient(145deg,#f4a887,#d785a9 47%,#695b98)}
+    .kaori-classics-cover{background:linear-gradient(135deg,#d8b0d9,#b8c7fa 55%,#f4d4b2)}
+    .kaori-horror-cover{background:linear-gradient(145deg,#20162e,#68415d 55%,#927696)}
+    .kaori-game-cover{background:linear-gradient(155deg,color-mix(in srgb,var(--game-accent) 58%,#23233b),#23233b 90%)}
+    .kaori-cover-fallback{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:12px;padding:30px;text-align:center;font-family:'Outfit',sans-serif;font-style:normal;background:radial-gradient(circle at 77% 22%,rgba(255,255,255,.36) 0 4%,transparent 33%),radial-gradient(circle at 12% 85%,rgba(255,255,255,.15),transparent 45%)}
+    .kaori-cover-fallback:before{content:'✦';font-size:90px;line-height:1;color:rgba(255,255,255,.12);position:absolute;right:14px;bottom:2px}
+    .kaori-fallback-icon{font-size:57px;line-height:1;filter:drop-shadow(0 7px 8px #0002)}
+    .kaori-cover-fallback strong{font:800 clamp(22px,2.4vw,29px)/1.1 'Outfit',sans-serif;letter-spacing:-.04em;max-width:280px;color:#fff;text-shadow:0 3px 20px #231c3b70}
+    .kaori-cover-fallback small{font:800 10px 'Outfit',sans-serif;color:rgba(255,255,255,.86);letter-spacing:.2em}
+    .kaori-card-art img{object-fit:cover;object-position:center 33%;background:transparent}
+    .kaori-card-art .card-pill{top:15px;left:15px;right:auto;max-width:calc(100% - 30px);white-space:normal;line-height:1.25}
+    .kaori-game-cover-card .card-foot{color:var(--game-accent)}
+    .kaori-library-card .card-foot span:first-child,.kaori-game-cover-card .card-foot span:first-child{line-height:1.45}
     .nav .links{gap:clamp(8px,1.3vw,19px)}.nav .links a{font-size:12px}
     @media(max-width:900px){.kaori-pick-grid,.kaori-game-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-    @media(max-width:600px){.kaori-library,.kaori-games{padding-top:75px}.kaori-collection-header{display:block}.kaori-collection-header p{margin-top:10px}.kaori-pick-grid,.kaori-game-grid{grid-template-columns:1fr}.kaori-pick{min-height:175px}.kaori-game-card{min-height:200px}.kaori-collection + .kaori-collection{margin-top:42px}}
+    @media(max-width:600px){.kaori-library,.kaori-games{padding-top:75px}.kaori-collection-header{display:block}.kaori-collection-header p{margin-top:10px}.kaori-pick-grid,.kaori-game-grid{grid-template-columns:1fr}.kaori-collection+.kaori-collection{margin-top:42px}.kaori-card-art{height:270px}}
   </style>
   <style id="kaori-editor-styles">
 /* KAORI Visual Studio — these styles only appear inside editor mode. */
@@ -365,43 +365,55 @@ html.kaori-edit-mode .kaori-selected {outline:3px solid #f3b9ff!important;outlin
       <h3><span data-kaori-text="librarytrendingGroup">Trending &amp; fan favorites</span></h3></div>
       <p><span data-kaori-text="librarytrendingIntro">Popular action, fantasy and talked-about shows.</span></p>
     </div>
-    <div class="kaori-pick-grid">
-      <article class="kaori-pick kaori-pick-trending">
-        <div class="kaori-pick-top"><span class="kaori-pick-emoji" aria-hidden="true">⚔️</span><span class="kaori-pick-no">01</span></div>
-        <h4><span data-kaori-text="librarytrending1Title">Black Clover: Season 2</span></h4>
-        <p><span data-kaori-text="librarytrending1Desc">Magic, rivalries and the next big chapter.</span></p>
-        <span class="kaori-pick-meta">2026 return</span>
-      </article>
-      <article class="kaori-pick kaori-pick-trending">
-        <div class="kaori-pick-top"><span class="kaori-pick-emoji" aria-hidden="true">🧪</span><span class="kaori-pick-no">02</span></div>
-        <h4><span data-kaori-text="librarytrending2Title">The Apothecary Diaries</span></h4>
-        <p><span data-kaori-text="librarytrending2Desc">Mysteries, palace intrigue and Maomao&#39;s deductions.</span></p>
-        <span class="kaori-pick-meta">Mystery · Drama</span>
-      </article>
-      <article class="kaori-pick kaori-pick-trending">
-        <div class="kaori-pick-top"><span class="kaori-pick-emoji" aria-hidden="true">👽</span><span class="kaori-pick-no">03</span></div>
-        <h4><span data-kaori-text="librarytrending3Title">DAN DA DAN</span></h4>
-        <p><span data-kaori-text="librarytrending3Desc">Aliens, spirits and chaotic supernatural action.</span></p>
-        <span class="kaori-pick-meta">Action · Supernatural</span>
-      </article>
-      <article class="kaori-pick kaori-pick-trending">
-        <div class="kaori-pick-top"><span class="kaori-pick-emoji" aria-hidden="true">🌙</span><span class="kaori-pick-no">04</span></div>
-        <h4><span data-kaori-text="librarytrending4Title">Frieren: Beyond Journey&#39;s End</span></h4>
-        <p><span data-kaori-text="librarytrending4Desc">A quiet fantasy journey about time and memories.</span></p>
-        <span class="kaori-pick-meta">Fantasy · Adventure</span>
-      </article>
-      <article class="kaori-pick kaori-pick-trending">
-        <div class="kaori-pick-top"><span class="kaori-pick-emoji" aria-hidden="true">⚡</span><span class="kaori-pick-no">05</span></div>
-        <h4><span data-kaori-text="librarytrending5Title">Solo Leveling</span></h4>
-        <p><span data-kaori-text="librarytrending5Desc">From the weakest hunter to overwhelming power.</span></p>
-        <span class="kaori-pick-meta">Action · Fantasy</span>
-      </article>
-      <article class="kaori-pick kaori-pick-trending">
-        <div class="kaori-pick-top"><span class="kaori-pick-emoji" aria-hidden="true">🔥</span><span class="kaori-pick-no">06</span></div>
-        <h4><span data-kaori-text="librarytrending6Title">Jujutsu Kaisen</span></h4>
-        <p><span data-kaori-text="librarytrending6Desc">Curses, sorcerers and unforgettable battles.</span></p>
-        <span class="kaori-pick-meta">Action · Dark fantasy</span>
-      </article>
+    <div class="anime-grid kaori-pick-grid">
+      <article class="anime-card kaori-library-card kaori-trending-card">
+    <div class="card-art kaori-card-art kaori-trending-cover">
+      <div class="image-fallback kaori-cover-fallback" aria-hidden="true"><span class="kaori-fallback-icon">⚔️</span><strong>Black Clover: Season 2</strong><small>KAORI / ANIME 01</small></div>
+      <img data-kaori-image="librarytrending1Art" loading="lazy" decoding="async" src="https://img.anili.st/97940" alt="Black Clover: Season 2 cover" onerror="this.style.display='none'" />
+      <span class="card-pill">🔥 TRENDING</span>
+    </div>
+    <div class="card-info"><h3><span data-kaori-text="librarytrending1Title">Black Clover: Season 2</span></h3><p><span data-kaori-text="librarytrending1Desc">Magic, rivalries and the next big chapter.</span></p><div class="card-foot"><span>✦ 2026 return</span><span class="arrow" aria-hidden="true">↗</span></div></div>
+  </article>
+      <article class="anime-card kaori-library-card kaori-trending-card">
+    <div class="card-art kaori-card-art kaori-trending-cover">
+      <div class="image-fallback kaori-cover-fallback" aria-hidden="true"><span class="kaori-fallback-icon">🧪</span><strong>The Apothecary Diaries</strong><small>KAORI / ANIME 02</small></div>
+      <img data-kaori-image="librarytrending2Art" loading="lazy" decoding="async" src="https://img.anili.st/161645" alt="The Apothecary Diaries cover" onerror="this.style.display='none'" />
+      <span class="card-pill">🔥 TRENDING</span>
+    </div>
+    <div class="card-info"><h3><span data-kaori-text="librarytrending2Title">The Apothecary Diaries</span></h3><p><span data-kaori-text="librarytrending2Desc">Mysteries, palace intrigue and Maomao&#39;s deductions.</span></p><div class="card-foot"><span>✦ Mystery · Drama</span><span class="arrow" aria-hidden="true">↗</span></div></div>
+  </article>
+      <article class="anime-card kaori-library-card kaori-trending-card">
+    <div class="card-art kaori-card-art kaori-trending-cover">
+      <div class="image-fallback kaori-cover-fallback" aria-hidden="true"><span class="kaori-fallback-icon">👽</span><strong>DAN DA DAN</strong><small>KAORI / ANIME 03</small></div>
+      <img data-kaori-image="librarytrending3Art" loading="lazy" decoding="async" src="https://img.anili.st/171018" alt="DAN DA DAN cover" onerror="this.style.display='none'" />
+      <span class="card-pill">🔥 TRENDING</span>
+    </div>
+    <div class="card-info"><h3><span data-kaori-text="librarytrending3Title">DAN DA DAN</span></h3><p><span data-kaori-text="librarytrending3Desc">Aliens, spirits and chaotic supernatural action.</span></p><div class="card-foot"><span>✦ Action · Supernatural</span><span class="arrow" aria-hidden="true">↗</span></div></div>
+  </article>
+      <article class="anime-card kaori-library-card kaori-trending-card">
+    <div class="card-art kaori-card-art kaori-trending-cover">
+      <div class="image-fallback kaori-cover-fallback" aria-hidden="true"><span class="kaori-fallback-icon">🌙</span><strong>Frieren: Beyond Journey&#39;s End</strong><small>KAORI / ANIME 04</small></div>
+      <img data-kaori-image="librarytrending4Art" loading="lazy" decoding="async" src="https://img.anili.st/154587" alt="Frieren: Beyond Journey's End cover" onerror="this.style.display='none'" />
+      <span class="card-pill">🔥 TRENDING</span>
+    </div>
+    <div class="card-info"><h3><span data-kaori-text="librarytrending4Title">Frieren: Beyond Journey&#39;s End</span></h3><p><span data-kaori-text="librarytrending4Desc">A quiet fantasy journey about time and memories.</span></p><div class="card-foot"><span>✦ Fantasy · Adventure</span><span class="arrow" aria-hidden="true">↗</span></div></div>
+  </article>
+      <article class="anime-card kaori-library-card kaori-trending-card">
+    <div class="card-art kaori-card-art kaori-trending-cover">
+      <div class="image-fallback kaori-cover-fallback" aria-hidden="true"><span class="kaori-fallback-icon">⚡</span><strong>Solo Leveling</strong><small>KAORI / ANIME 05</small></div>
+      <img data-kaori-image="librarytrending5Art" loading="lazy" decoding="async" src="https://img.anili.st/151807" alt="Solo Leveling cover" onerror="this.style.display='none'" />
+      <span class="card-pill">🔥 TRENDING</span>
+    </div>
+    <div class="card-info"><h3><span data-kaori-text="librarytrending5Title">Solo Leveling</span></h3><p><span data-kaori-text="librarytrending5Desc">From the weakest hunter to overwhelming power.</span></p><div class="card-foot"><span>✦ Action · Fantasy</span><span class="arrow" aria-hidden="true">↗</span></div></div>
+  </article>
+      <article class="anime-card kaori-library-card kaori-trending-card">
+    <div class="card-art kaori-card-art kaori-trending-cover">
+      <div class="image-fallback kaori-cover-fallback" aria-hidden="true"><span class="kaori-fallback-icon">🔥</span><strong>Jujutsu Kaisen</strong><small>KAORI / ANIME 06</small></div>
+      <img data-kaori-image="librarytrending6Art" loading="lazy" decoding="async" src="https://img.anili.st/113415" alt="Jujutsu Kaisen cover" onerror="this.style.display='none'" />
+      <span class="card-pill">🔥 TRENDING</span>
+    </div>
+    <div class="card-info"><h3><span data-kaori-text="librarytrending6Title">Jujutsu Kaisen</span></h3><p><span data-kaori-text="librarytrending6Desc">Curses, sorcerers and unforgettable battles.</span></p><div class="card-foot"><span>✦ Action · Dark fantasy</span><span class="arrow" aria-hidden="true">↗</span></div></div>
+  </article>
     </div>
   </div>
         <div class="kaori-collection kaori-collection-classics">
@@ -410,43 +422,55 @@ html.kaori-edit-mode .kaori-selected {outline:3px solid #f3b9ff!important;outlin
       <h3><span data-kaori-text="libraryclassicsGroup">Classic all-girl casts</span></h3></div>
       <p><span data-kaori-text="libraryclassicsIntro">Nostalgic school life, music, comedy and friendship.</span></p>
     </div>
-    <div class="kaori-pick-grid">
-      <article class="kaori-pick kaori-pick-classics">
-        <div class="kaori-pick-top"><span class="kaori-pick-emoji" aria-hidden="true">🎸</span><span class="kaori-pick-no">01</span></div>
-        <h4><span data-kaori-text="libraryclassics1Title">K-On!</span></h4>
-        <p><span data-kaori-text="libraryclassics1Desc">The light music club&#39;s tea, friendship and songs.</span></p>
-        <span class="kaori-pick-meta">2009 · Music</span>
-      </article>
-      <article class="kaori-pick kaori-pick-classics">
-        <div class="kaori-pick-top"><span class="kaori-pick-emoji" aria-hidden="true">⭐</span><span class="kaori-pick-no">02</span></div>
-        <h4><span data-kaori-text="libraryclassics2Title">Lucky Star</span></h4>
-        <p><span data-kaori-text="libraryclassics2Desc">Everyday comedy with Konata and her friends.</span></p>
-        <span class="kaori-pick-meta">2007 · Comedy</span>
-      </article>
-      <article class="kaori-pick kaori-pick-classics">
-        <div class="kaori-pick-top"><span class="kaori-pick-emoji" aria-hidden="true">📚</span><span class="kaori-pick-no">03</span></div>
-        <h4><span data-kaori-text="libraryclassics3Title">Azumanga Daioh</span></h4>
-        <p><span data-kaori-text="libraryclassics3Desc">Classic school-life humor with an unforgettable girls&#39; class.</span></p>
-        <span class="kaori-pick-meta">2002 · Slice of life</span>
-      </article>
-      <article class="kaori-pick kaori-pick-classics">
-        <div class="kaori-pick-top"><span class="kaori-pick-emoji" aria-hidden="true">🎨</span><span class="kaori-pick-no">04</span></div>
-        <h4><span data-kaori-text="libraryclassics4Title">Hidamari Sketch</span></h4>
-        <p><span data-kaori-text="libraryclassics4Desc">Art-school girls sharing sunny everyday moments.</span></p>
-        <span class="kaori-pick-meta">2007 · Art · Slice of life</span>
-      </article>
-      <article class="kaori-pick kaori-pick-classics">
-        <div class="kaori-pick-top"><span class="kaori-pick-emoji" aria-hidden="true">🍵</span><span class="kaori-pick-no">05</span></div>
-        <h4><span data-kaori-text="libraryclassics5Title">YuruYuri</span></h4>
-        <p><span data-kaori-text="libraryclassics5Desc">A lighthearted girls&#39; club full of fun and friendship.</span></p>
-        <span class="kaori-pick-meta">2011 · Comedy</span>
-      </article>
-      <article class="kaori-pick kaori-pick-classics">
-        <div class="kaori-pick-top"><span class="kaori-pick-emoji" aria-hidden="true">☀️</span><span class="kaori-pick-no">06</span></div>
-        <h4><span data-kaori-text="libraryclassics6Title">Love Live! School Idol Project</span></h4>
-        <p><span data-kaori-text="libraryclassics6Desc">Honoka and μ&#39;s chase their school idol dreams.</span></p>
-        <span class="kaori-pick-meta">2013 · Idols · Music</span>
-      </article>
+    <div class="anime-grid kaori-pick-grid">
+      <article class="anime-card kaori-library-card kaori-classics-card">
+    <div class="card-art kaori-card-art kaori-classics-cover">
+      <div class="image-fallback kaori-cover-fallback" aria-hidden="true"><span class="kaori-fallback-icon">🎸</span><strong>K-On!</strong><small>KAORI / ANIME 01</small></div>
+      <img data-kaori-image="libraryclassics1Art" loading="lazy" decoding="async" src="https://img.anili.st/5680" alt="K-On! cover" onerror="this.style.display='none'" />
+      <span class="card-pill">🌸 CLASSIC</span>
+    </div>
+    <div class="card-info"><h3><span data-kaori-text="libraryclassics1Title">K-On!</span></h3><p><span data-kaori-text="libraryclassics1Desc">The light music club&#39;s tea, friendship and songs.</span></p><div class="card-foot"><span>✦ 2009 · Music</span><span class="arrow" aria-hidden="true">↗</span></div></div>
+  </article>
+      <article class="anime-card kaori-library-card kaori-classics-card">
+    <div class="card-art kaori-card-art kaori-classics-cover">
+      <div class="image-fallback kaori-cover-fallback" aria-hidden="true"><span class="kaori-fallback-icon">⭐</span><strong>Lucky Star</strong><small>KAORI / ANIME 02</small></div>
+      <img data-kaori-image="libraryclassics2Art" loading="lazy" decoding="async" src="https://img.anili.st/1887" alt="Lucky Star cover" onerror="this.style.display='none'" />
+      <span class="card-pill">🌸 CLASSIC</span>
+    </div>
+    <div class="card-info"><h3><span data-kaori-text="libraryclassics2Title">Lucky Star</span></h3><p><span data-kaori-text="libraryclassics2Desc">Everyday comedy with Konata and her friends.</span></p><div class="card-foot"><span>✦ 2007 · Comedy</span><span class="arrow" aria-hidden="true">↗</span></div></div>
+  </article>
+      <article class="anime-card kaori-library-card kaori-classics-card">
+    <div class="card-art kaori-card-art kaori-classics-cover">
+      <div class="image-fallback kaori-cover-fallback" aria-hidden="true"><span class="kaori-fallback-icon">📚</span><strong>Azumanga Daioh</strong><small>KAORI / ANIME 03</small></div>
+      <img data-kaori-image="libraryclassics3Art" loading="lazy" decoding="async" src="https://img.anili.st/66" alt="Azumanga Daioh cover" onerror="this.style.display='none'" />
+      <span class="card-pill">🌸 CLASSIC</span>
+    </div>
+    <div class="card-info"><h3><span data-kaori-text="libraryclassics3Title">Azumanga Daioh</span></h3><p><span data-kaori-text="libraryclassics3Desc">Classic school-life humor with an unforgettable girls&#39; class.</span></p><div class="card-foot"><span>✦ 2002 · Slice of life</span><span class="arrow" aria-hidden="true">↗</span></div></div>
+  </article>
+      <article class="anime-card kaori-library-card kaori-classics-card">
+    <div class="card-art kaori-card-art kaori-classics-cover">
+      <div class="image-fallback kaori-cover-fallback" aria-hidden="true"><span class="kaori-fallback-icon">🎨</span><strong>Hidamari Sketch</strong><small>KAORI / ANIME 04</small></div>
+      <img data-kaori-image="libraryclassics4Art" loading="lazy" decoding="async" src="https://img.anili.st/1852" alt="Hidamari Sketch cover" onerror="this.style.display='none'" />
+      <span class="card-pill">🌸 CLASSIC</span>
+    </div>
+    <div class="card-info"><h3><span data-kaori-text="libraryclassics4Title">Hidamari Sketch</span></h3><p><span data-kaori-text="libraryclassics4Desc">Art-school girls sharing sunny everyday moments.</span></p><div class="card-foot"><span>✦ 2007 · Art · Slice of life</span><span class="arrow" aria-hidden="true">↗</span></div></div>
+  </article>
+      <article class="anime-card kaori-library-card kaori-classics-card">
+    <div class="card-art kaori-card-art kaori-classics-cover">
+      <div class="image-fallback kaori-cover-fallback" aria-hidden="true"><span class="kaori-fallback-icon">🍵</span><strong>YuruYuri</strong><small>KAORI / ANIME 05</small></div>
+      <img data-kaori-image="libraryclassics5Art" loading="lazy" decoding="async" src="https://img.anili.st/10495" alt="YuruYuri cover" onerror="this.style.display='none'" />
+      <span class="card-pill">🌸 CLASSIC</span>
+    </div>
+    <div class="card-info"><h3><span data-kaori-text="libraryclassics5Title">YuruYuri</span></h3><p><span data-kaori-text="libraryclassics5Desc">A lighthearted girls&#39; club full of fun and friendship.</span></p><div class="card-foot"><span>✦ 2011 · Comedy</span><span class="arrow" aria-hidden="true">↗</span></div></div>
+  </article>
+      <article class="anime-card kaori-library-card kaori-classics-card">
+    <div class="card-art kaori-card-art kaori-classics-cover">
+      <div class="image-fallback kaori-cover-fallback" aria-hidden="true"><span class="kaori-fallback-icon">☀️</span><strong>Love Live! School Idol Project</strong><small>KAORI / ANIME 06</small></div>
+      <img data-kaori-image="libraryclassics6Art" loading="lazy" decoding="async" src="https://img.anili.st/15051" alt="Love Live! School Idol Project cover" onerror="this.style.display='none'" />
+      <span class="card-pill">🌸 CLASSIC</span>
+    </div>
+    <div class="card-info"><h3><span data-kaori-text="libraryclassics6Title">Love Live! School Idol Project</span></h3><p><span data-kaori-text="libraryclassics6Desc">Honoka and μ&#39;s chase their school idol dreams.</span></p><div class="card-foot"><span>✦ 2013 · Idols · Music</span><span class="arrow" aria-hidden="true">↗</span></div></div>
+  </article>
     </div>
   </div>
         <div class="kaori-collection kaori-collection-horror">
@@ -455,43 +479,55 @@ html.kaori-edit-mode .kaori-selected {outline:3px solid #f3b9ff!important;outlin
       <h3><span data-kaori-text="libraryhorrorGroup">Horror after dark</span></h3></div>
       <p><span data-kaori-text="libraryhorrorIntro">Ghost stories, mysteries and unsettling atmosphere.</span></p>
     </div>
-    <div class="kaori-pick-grid">
-      <article class="kaori-pick kaori-pick-horror">
-        <div class="kaori-pick-top"><span class="kaori-pick-emoji" aria-hidden="true">👁️</span><span class="kaori-pick-no">01</span></div>
-        <h4><span data-kaori-text="libraryhorror1Title">Another</span></h4>
-        <p><span data-kaori-text="libraryhorror1Desc">A cursed classroom and a deadly mystery.</span></p>
-        <span class="kaori-pick-meta">2012 · Mystery horror</span>
-      </article>
-      <article class="kaori-pick kaori-pick-horror">
-        <div class="kaori-pick-top"><span class="kaori-pick-emoji" aria-hidden="true">🌑</span><span class="kaori-pick-no">02</span></div>
-        <h4><span data-kaori-text="libraryhorror2Title">Higurashi: When They Cry</span></h4>
-        <p><span data-kaori-text="libraryhorror2Desc">A seemingly peaceful village hides a terrifying secret.</span></p>
-        <span class="kaori-pick-meta">2006 · Psychological horror</span>
-      </article>
-      <article class="kaori-pick kaori-pick-horror">
-        <div class="kaori-pick-top"><span class="kaori-pick-emoji" aria-hidden="true">🦇</span><span class="kaori-pick-no">03</span></div>
-        <h4><span data-kaori-text="libraryhorror3Title">Shiki</span></h4>
-        <p><span data-kaori-text="libraryhorror3Desc">A remote village faces a chilling mystery.</span></p>
-        <span class="kaori-pick-meta">2010 · Supernatural horror</span>
-      </article>
-      <article class="kaori-pick kaori-pick-horror">
-        <div class="kaori-pick-top"><span class="kaori-pick-emoji" aria-hidden="true">👻</span><span class="kaori-pick-no">04</span></div>
-        <h4><span data-kaori-text="libraryhorror4Title">Mieruko-chan</span></h4>
-        <p><span data-kaori-text="libraryhorror4Desc">A student ignores the terrifying spirits only she can see.</span></p>
-        <span class="kaori-pick-meta">2021 · Supernatural</span>
-      </article>
-      <article class="kaori-pick kaori-pick-horror">
-        <div class="kaori-pick-top"><span class="kaori-pick-emoji" aria-hidden="true">🕯️</span><span class="kaori-pick-no">05</span></div>
-        <h4><span data-kaori-text="libraryhorror5Title">Dark Gathering</span></h4>
-        <p><span data-kaori-text="libraryhorror5Desc">Ghost hunting with a genuinely creepy twist.</span></p>
-        <span class="kaori-pick-meta">2023 · Horror</span>
-      </article>
-      <article class="kaori-pick kaori-pick-horror">
-        <div class="kaori-pick-top"><span class="kaori-pick-emoji" aria-hidden="true">🌹</span><span class="kaori-pick-no">06</span></div>
-        <h4><span data-kaori-text="libraryhorror6Title">Hell Girl</span></h4>
-        <p><span data-kaori-text="libraryhorror6Desc">A haunting anthology of grudges and revenge.</span></p>
-        <span class="kaori-pick-meta">2005 · Supernatural horror</span>
-      </article>
+    <div class="anime-grid kaori-pick-grid">
+      <article class="anime-card kaori-library-card kaori-horror-card">
+    <div class="card-art kaori-card-art kaori-horror-cover">
+      <div class="image-fallback kaori-cover-fallback" aria-hidden="true"><span class="kaori-fallback-icon">👁️</span><strong>Another</strong><small>KAORI / ANIME 01</small></div>
+      <img data-kaori-image="libraryhorror1Art" loading="lazy" decoding="async" src="https://img.anili.st/11111" alt="Another cover" onerror="this.style.display='none'" />
+      <span class="card-pill">🌙 HORROR</span>
+    </div>
+    <div class="card-info"><h3><span data-kaori-text="libraryhorror1Title">Another</span></h3><p><span data-kaori-text="libraryhorror1Desc">A cursed classroom and a deadly mystery.</span></p><div class="card-foot"><span>✦ 2012 · Mystery horror</span><span class="arrow" aria-hidden="true">↗</span></div></div>
+  </article>
+      <article class="anime-card kaori-library-card kaori-horror-card">
+    <div class="card-art kaori-card-art kaori-horror-cover">
+      <div class="image-fallback kaori-cover-fallback" aria-hidden="true"><span class="kaori-fallback-icon">🌑</span><strong>Higurashi: When They Cry</strong><small>KAORI / ANIME 02</small></div>
+      <img data-kaori-image="libraryhorror2Art" loading="lazy" decoding="async" src="https://img.anili.st/934" alt="Higurashi: When They Cry cover" onerror="this.style.display='none'" />
+      <span class="card-pill">🌙 HORROR</span>
+    </div>
+    <div class="card-info"><h3><span data-kaori-text="libraryhorror2Title">Higurashi: When They Cry</span></h3><p><span data-kaori-text="libraryhorror2Desc">A seemingly peaceful village hides a terrifying secret.</span></p><div class="card-foot"><span>✦ 2006 · Psychological horror</span><span class="arrow" aria-hidden="true">↗</span></div></div>
+  </article>
+      <article class="anime-card kaori-library-card kaori-horror-card">
+    <div class="card-art kaori-card-art kaori-horror-cover">
+      <div class="image-fallback kaori-cover-fallback" aria-hidden="true"><span class="kaori-fallback-icon">🦇</span><strong>Shiki</strong><small>KAORI / ANIME 03</small></div>
+      <img data-kaori-image="libraryhorror3Art" loading="lazy" decoding="async" src="https://img.anili.st/7724" alt="Shiki cover" onerror="this.style.display='none'" />
+      <span class="card-pill">🌙 HORROR</span>
+    </div>
+    <div class="card-info"><h3><span data-kaori-text="libraryhorror3Title">Shiki</span></h3><p><span data-kaori-text="libraryhorror3Desc">A remote village faces a chilling mystery.</span></p><div class="card-foot"><span>✦ 2010 · Supernatural horror</span><span class="arrow" aria-hidden="true">↗</span></div></div>
+  </article>
+      <article class="anime-card kaori-library-card kaori-horror-card">
+    <div class="card-art kaori-card-art kaori-horror-cover">
+      <div class="image-fallback kaori-cover-fallback" aria-hidden="true"><span class="kaori-fallback-icon">👻</span><strong>Mieruko-chan</strong><small>KAORI / ANIME 04</small></div>
+      <img data-kaori-image="libraryhorror4Art" loading="lazy" decoding="async" src="https://img.anili.st/131083" alt="Mieruko-chan cover" onerror="this.style.display='none'" />
+      <span class="card-pill">🌙 HORROR</span>
+    </div>
+    <div class="card-info"><h3><span data-kaori-text="libraryhorror4Title">Mieruko-chan</span></h3><p><span data-kaori-text="libraryhorror4Desc">A student ignores the terrifying spirits only she can see.</span></p><div class="card-foot"><span>✦ 2021 · Supernatural</span><span class="arrow" aria-hidden="true">↗</span></div></div>
+  </article>
+      <article class="anime-card kaori-library-card kaori-horror-card">
+    <div class="card-art kaori-card-art kaori-horror-cover">
+      <div class="image-fallback kaori-cover-fallback" aria-hidden="true"><span class="kaori-fallback-icon">🕯️</span><strong>Dark Gathering</strong><small>KAORI / ANIME 05</small></div>
+      <img data-kaori-image="libraryhorror5Art" loading="lazy" decoding="async" src="https://img.anili.st/152802" alt="Dark Gathering cover" onerror="this.style.display='none'" />
+      <span class="card-pill">🌙 HORROR</span>
+    </div>
+    <div class="card-info"><h3><span data-kaori-text="libraryhorror5Title">Dark Gathering</span></h3><p><span data-kaori-text="libraryhorror5Desc">Ghost hunting with a genuinely creepy twist.</span></p><div class="card-foot"><span>✦ 2023 · Horror</span><span class="arrow" aria-hidden="true">↗</span></div></div>
+  </article>
+      <article class="anime-card kaori-library-card kaori-horror-card">
+    <div class="card-art kaori-card-art kaori-horror-cover">
+      <div class="image-fallback kaori-cover-fallback" aria-hidden="true"><span class="kaori-fallback-icon">🌹</span><strong>Hell Girl</strong><small>KAORI / ANIME 06</small></div>
+      <img data-kaori-image="libraryhorror6Art" loading="lazy" decoding="async" src="https://img.anili.st/228" alt="Hell Girl cover" onerror="this.style.display='none'" />
+      <span class="card-pill">🌙 HORROR</span>
+    </div>
+    <div class="card-info"><h3><span data-kaori-text="libraryhorror6Title">Hell Girl</span></h3><p><span data-kaori-text="libraryhorror6Desc">A haunting anthology of grudges and revenge.</span></p><div class="card-foot"><span>✦ 2005 · Supernatural horror</span><span class="arrow" aria-hidden="true">↗</span></div></div>
+  </article>
     </div>
   </div>
       </div>
@@ -505,43 +541,55 @@ html.kaori-edit-mode .kaori-selected {outline:3px solid #f3b9ff!important;outlin
           </div>
           <p class="section-desc"><span data-kaori-text="gamesDescription">From open-world adventures to competitive matches, these are the games in KAORI&#39;s rotation.</span></p>
         </div>
-        <div class="kaori-game-grid">
-          <article class="kaori-game-card" style="--game-accent:#78d4d5">
-            <div class="kaori-game-top"><span class="kaori-game-symbol" aria-hidden="true">🌊</span><span class="kaori-game-index">GAME / 01</span></div>
-            <h3><span data-kaori-text="game1Title">Wuthering Waves</span></h3>
-            <p><span data-kaori-text="game1Desc">Open-world action RPG · exploration and stylish combat.</span></p>
-            <span class="kaori-game-tag">OPEN WORLD RPG</span>
-          </article>
-          <article class="kaori-game-card" style="--game-accent:#efc57b">
-            <div class="kaori-game-top"><span class="kaori-game-symbol" aria-hidden="true">✨</span><span class="kaori-game-index">GAME / 02</span></div>
-            <h3><span data-kaori-text="game2Title">Genshin Impact</span></h3>
-            <p><span data-kaori-text="game2Desc">Explore Teyvat, collect characters and build your dream team.</span></p>
-            <span class="kaori-game-tag">OPEN WORLD RPG</span>
-          </article>
-          <article class="kaori-game-card" style="--game-accent:#ff7582">
-            <div class="kaori-game-top"><span class="kaori-game-symbol" aria-hidden="true">🎯</span><span class="kaori-game-index">GAME / 03</span></div>
-            <h3><span data-kaori-text="game3Title">VALORANT</span></h3>
-            <p><span data-kaori-text="game3Desc">Tactical 5v5 FPS · agents, teamwork and clutch rounds.</span></p>
-            <span class="kaori-game-tag">TACTICAL FPS</span>
-          </article>
-          <article class="kaori-game-card" style="--game-accent:#d98b72">
-            <div class="kaori-game-top"><span class="kaori-game-symbol" aria-hidden="true">⚔️</span><span class="kaori-game-index">GAME / 04</span></div>
-            <h3><span data-kaori-text="game4Title">Dota 2</span></h3>
-            <p><span data-kaori-text="game4Desc">The classic competitive MOBA with deep team strategy.</span></p>
-            <span class="kaori-game-tag">MOBA</span>
-          </article>
-          <article class="kaori-game-card" style="--game-accent:#b7b7ff">
-            <div class="kaori-game-top"><span class="kaori-game-symbol" aria-hidden="true">🧱</span><span class="kaori-game-index">GAME / 05</span></div>
-            <h3><span data-kaori-text="game5Title">Roblox</span></h3>
-            <p><span data-kaori-text="game5Desc">Endless game worlds, creativity and adventures with friends.</span></p>
-            <span class="kaori-game-tag">CREATIVE PLATFORM</span>
-          </article>
-          <article class="kaori-game-card" style="--game-accent:#bca9f9">
-            <div class="kaori-game-top"><span class="kaori-game-symbol" aria-hidden="true">🚀</span><span class="kaori-game-index">GAME / 06</span></div>
-            <h3><span data-kaori-text="game6Title">Honkai: Star Rail</span></h3>
-            <p><span data-kaori-text="game6Desc">Turn-based adventures across the stars.</span></p>
-            <span class="kaori-game-tag">TURN-BASED RPG</span>
-          </article>
+        <div class="anime-grid kaori-game-grid">
+          <article class="anime-card kaori-game-cover-card" style="--game-accent:#78d4d5">
+    <div class="card-art kaori-card-art kaori-game-cover">
+      <div class="image-fallback kaori-cover-fallback" aria-hidden="true"><span class="kaori-fallback-icon">🌊</span><strong>Wuthering Waves</strong><small>KAORI / GAME 01</small></div>
+      <img data-kaori-image="game1Art" loading="lazy" decoding="async" src="https://c.psprices.com/400/d9c3d63252fa5729e09c65541fc6f705.webp" alt="Wuthering Waves game art" onerror="this.style.display='none'" />
+      <span class="card-pill">OPEN WORLD RPG</span>
+    </div>
+    <div class="card-info"><h3><span data-kaori-text="game1Title">Wuthering Waves</span></h3><p><span data-kaori-text="game1Desc">Open-world action RPG · exploration and stylish combat.</span></p><div class="card-foot"><span>✦ PLAYER ONE / 01</span><span class="arrow" aria-hidden="true">↗</span></div></div>
+  </article>
+          <article class="anime-card kaori-game-cover-card" style="--game-accent:#efc57b">
+    <div class="card-art kaori-card-art kaori-game-cover">
+      <div class="image-fallback kaori-cover-fallback" aria-hidden="true"><span class="kaori-fallback-icon">✨</span><strong>Genshin Impact</strong><small>KAORI / GAME 02</small></div>
+      <img data-kaori-image="game2Art" loading="lazy" decoding="async" src="https://www.vgdb.com.br/gf/fotos/games/media_39864/genshin-impact---39864.jpg" alt="Genshin Impact game art" onerror="this.style.display='none'" />
+      <span class="card-pill">OPEN WORLD RPG</span>
+    </div>
+    <div class="card-info"><h3><span data-kaori-text="game2Title">Genshin Impact</span></h3><p><span data-kaori-text="game2Desc">Explore Teyvat, collect characters and build your dream team.</span></p><div class="card-foot"><span>✦ PLAYER ONE / 02</span><span class="arrow" aria-hidden="true">↗</span></div></div>
+  </article>
+          <article class="anime-card kaori-game-cover-card" style="--game-accent:#ff7582">
+    <div class="card-art kaori-card-art kaori-game-cover">
+      <div class="image-fallback kaori-cover-fallback" aria-hidden="true"><span class="kaori-fallback-icon">🎯</span><strong>VALORANT</strong><small>KAORI / GAME 03</small></div>
+      <img data-kaori-image="game3Art" loading="lazy" decoding="async" src="https://cdn.mos.cms.futurecdn.net/v2/t%3A0%2Cl%3A137%2Ccw%3A1125%2Cch%3A844%2Cq%3A80%2Cw%3A1125/QotLyoh6LR4VT8KvE3tGze.jpg" alt="VALORANT game art" onerror="this.style.display='none'" />
+      <span class="card-pill">TACTICAL FPS</span>
+    </div>
+    <div class="card-info"><h3><span data-kaori-text="game3Title">VALORANT</span></h3><p><span data-kaori-text="game3Desc">Tactical 5v5 FPS · agents, teamwork and clutch rounds.</span></p><div class="card-foot"><span>✦ PLAYER ONE / 03</span><span class="arrow" aria-hidden="true">↗</span></div></div>
+  </article>
+          <article class="anime-card kaori-game-cover-card" style="--game-accent:#d98b72">
+    <div class="card-art kaori-card-art kaori-game-cover">
+      <div class="image-fallback kaori-cover-fallback" aria-hidden="true"><span class="kaori-fallback-icon">⚔️</span><strong>Dota 2</strong><small>KAORI / GAME 04</small></div>
+      <img data-kaori-image="game4Art" loading="lazy" decoding="async" src="https://i.blogs.es/34f2bc/blob/original.jpeg" alt="Dota 2 game art" onerror="this.style.display='none'" />
+      <span class="card-pill">MOBA</span>
+    </div>
+    <div class="card-info"><h3><span data-kaori-text="game4Title">Dota 2</span></h3><p><span data-kaori-text="game4Desc">The classic competitive MOBA with deep team strategy.</span></p><div class="card-foot"><span>✦ PLAYER ONE / 04</span><span class="arrow" aria-hidden="true">↗</span></div></div>
+  </article>
+          <article class="anime-card kaori-game-cover-card" style="--game-accent:#b7b7ff">
+    <div class="card-art kaori-card-art kaori-game-cover">
+      <div class="image-fallback kaori-cover-fallback" aria-hidden="true"><span class="kaori-fallback-icon">🧱</span><strong>Roblox</strong><small>KAORI / GAME 05</small></div>
+      <img data-kaori-image="game5Art" loading="lazy" decoding="async" src="https://media.esports.gg/uploads/2025/04/Roblox-official-artwork-with-Robux-icon-1024x576.jpg" alt="Roblox game art" onerror="this.style.display='none'" />
+      <span class="card-pill">CREATIVE PLATFORM</span>
+    </div>
+    <div class="card-info"><h3><span data-kaori-text="game5Title">Roblox</span></h3><p><span data-kaori-text="game5Desc">Endless game worlds, creativity and adventures with friends.</span></p><div class="card-foot"><span>✦ PLAYER ONE / 05</span><span class="arrow" aria-hidden="true">↗</span></div></div>
+  </article>
+          <article class="anime-card kaori-game-cover-card" style="--game-accent:#bca9f9">
+    <div class="card-art kaori-card-art kaori-game-cover">
+      <div class="image-fallback kaori-cover-fallback" aria-hidden="true"><span class="kaori-fallback-icon">🚀</span><strong>Honkai: Star Rail</strong><small>KAORI / GAME 06</small></div>
+      <img data-kaori-image="game6Art" loading="lazy" decoding="async" src="https://galaxylink.gg/public/images/s11730738955.webp" alt="Honkai: Star Rail game art" onerror="this.style.display='none'" />
+      <span class="card-pill">TURN-BASED RPG</span>
+    </div>
+    <div class="card-info"><h3><span data-kaori-text="game6Title">Honkai: Star Rail</span></h3><p><span data-kaori-text="game6Desc">Turn-based adventures across the stars.</span></p><div class="card-foot"><span>✦ PLAYER ONE / 06</span><span class="arrow" aria-hidden="true">↗</span></div></div>
+  </article>
         </div>
       </div>
     </section>
@@ -783,6 +831,30 @@ html.kaori-edit-mode .kaori-selected {outline:3px solid #f3b9ff!important;outlin
     ['anime1','Anime card 1',['#favorites .anime-card:nth-child(1) .card-art img']],
     ['anime2','Anime card 2',['#favorites .anime-card:nth-child(2) .card-art img']],
     ['anime3','Anime card 3',['#favorites .anime-card:nth-child(3) .card-art img']],
+    ['librarytrending1Art','Black Clover: Season 2 artwork', ['[data-kaori-image="librarytrending1Art"]']],
+    ['librarytrending2Art','The Apothecary Diaries artwork', ['[data-kaori-image="librarytrending2Art"]']],
+    ['librarytrending3Art','DAN DA DAN artwork', ['[data-kaori-image="librarytrending3Art"]']],
+    ['librarytrending4Art','Frieren: Beyond Journey\'s End artwork', ['[data-kaori-image="librarytrending4Art"]']],
+    ['librarytrending5Art','Solo Leveling artwork', ['[data-kaori-image="librarytrending5Art"]']],
+    ['librarytrending6Art','Jujutsu Kaisen artwork', ['[data-kaori-image="librarytrending6Art"]']],
+    ['libraryclassics1Art','K-On! artwork', ['[data-kaori-image="libraryclassics1Art"]']],
+    ['libraryclassics2Art','Lucky Star artwork', ['[data-kaori-image="libraryclassics2Art"]']],
+    ['libraryclassics3Art','Azumanga Daioh artwork', ['[data-kaori-image="libraryclassics3Art"]']],
+    ['libraryclassics4Art','Hidamari Sketch artwork', ['[data-kaori-image="libraryclassics4Art"]']],
+    ['libraryclassics5Art','YuruYuri artwork', ['[data-kaori-image="libraryclassics5Art"]']],
+    ['libraryclassics6Art','Love Live! School Idol Project artwork', ['[data-kaori-image="libraryclassics6Art"]']],
+    ['libraryhorror1Art','Another artwork', ['[data-kaori-image="libraryhorror1Art"]']],
+    ['libraryhorror2Art','Higurashi: When They Cry artwork', ['[data-kaori-image="libraryhorror2Art"]']],
+    ['libraryhorror3Art','Shiki artwork', ['[data-kaori-image="libraryhorror3Art"]']],
+    ['libraryhorror4Art','Mieruko-chan artwork', ['[data-kaori-image="libraryhorror4Art"]']],
+    ['libraryhorror5Art','Dark Gathering artwork', ['[data-kaori-image="libraryhorror5Art"]']],
+    ['libraryhorror6Art','Hell Girl artwork', ['[data-kaori-image="libraryhorror6Art"]']],
+    ['game1Art','Wuthering Waves artwork', ['[data-kaori-image="game1Art"]']],
+    ['game2Art','Genshin Impact artwork', ['[data-kaori-image="game2Art"]']],
+    ['game3Art','VALORANT artwork', ['[data-kaori-image="game3Art"]']],
+    ['game4Art','Dota 2 artwork', ['[data-kaori-image="game4Art"]']],
+    ['game5Art','Roblox artwork', ['[data-kaori-image="game5Art"]']],
+    ['game6Art','Honkai: Star Rail artwork', ['[data-kaori-image="game6Art"]']],
     ['edit1','Fan edit image 1',['#edits .edit-tile:nth-child(1) img']],
     ['edit2','Fan edit image 2',['#edits .edit-tile:nth-child(2) img']],
     ['edit3','Fan edit image 3',['#edits .edit-tile:nth-child(3) img']]
