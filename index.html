@@ -167,6 +167,37 @@
     @media(max-width:520px) {
       .follow-btn{display:none}.hero-title{font-size:clamp(48px,11vw,61px)}.art-stage{height:390px}.side-tag{font-size:20px;padding:10px;right:0}.card-note{left:9px;bottom:35px}.star-a{right:4px}.star-b{left:0}.anime-grid{grid-template-columns:1fr}.card-art{height:290px}.card-info p{min-height:auto}.edits-layout{grid-template-columns:1fr}.edit-big{grid-row:auto;min-height:390px}.edit-tile{min-height:260px}.section-heading{margin-bottom:25px}.heading{font-size:35px}.filter-row{gap:6px}.filter-btn{font-size:11px;padding:10px 13px}.about-box{padding:18px}.about-copy{padding:8px 6px 13px}.social-grid{grid-template-columns:1fr}.social-card{padding:23px}.guestbook{padding:23px}.footer-content{gap:12px}.footer-content p{margin:0}}
     @media(prefers-reduced-motion:reduce) {html{scroll-behavior:auto}.marquee-track{animation:none}.reveal{opacity:1;transform:none;transition:none}*,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important}}
+
+    /* KAORI / Anime archive & favorite games — text-first cards, no broken external image dependencies */
+    .kaori-library,.kaori-games{padding:98px 0 0}
+    .kaori-library .section-heading,.kaori-games .section-heading{margin-bottom:34px}
+    .kaori-collection{margin-top:40px}
+    .kaori-collection + .kaori-collection{margin-top:62px}
+    .kaori-collection-header{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:19px}
+    .kaori-collection-kicker{font-size:10px;font-weight:900;letter-spacing:.18em;color:var(--peach)}
+    .kaori-collection-header h3{font:800 clamp(25px,3.1vw,36px)/1.2 'Outfit',sans-serif;letter-spacing:-.04em;margin:8px 0 0}
+    .kaori-collection-header p{font-size:12px;line-height:1.6;color:var(--sub);max-width:320px;margin:0}
+    .kaori-pick-grid,.kaori-game-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .kaori-pick{position:relative;min-height:205px;background:var(--panel);border:1px solid var(--line);border-radius:19px;padding:20px 21px 18px;overflow:hidden;transition:transform .2s,border-color .2s;display:flex;flex-direction:column}
+    .kaori-pick::before{content:'';position:absolute;inset:0 0 auto;height:4px;background:var(--pick-accent)}
+    .kaori-pick-trending{--pick-accent:linear-gradient(90deg,#f0af78,#ff83aa)}
+    .kaori-pick-classics{--pick-accent:linear-gradient(90deg,#c9a9ff,#8db8ff)}
+    .kaori-pick-horror{--pick-accent:linear-gradient(90deg,#955b9c,#ef6f82);background:linear-gradient(135deg,var(--panel),color-mix(in srgb,var(--panel) 79%,#5f2949))}
+    .kaori-pick:hover,.kaori-game-card:hover{transform:translateY(-4px);border-color:var(--violet)}
+    .kaori-pick-top,.kaori-game-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .kaori-pick-emoji{width:37px;height:37px;display:grid;place-items:center;border-radius:11px;background:color-mix(in srgb,var(--panel2) 80%,#fff);font-size:20px}
+    .kaori-pick-no,.kaori-game-index{font:800 10px 'Outfit',sans-serif;color:var(--sub);letter-spacing:.15em}
+    .kaori-pick h4{font:800 19px/1.25 'Outfit',sans-serif;letter-spacing:-.025em;margin:17px 0 7px}
+    .kaori-pick p{font-size:12px;line-height:1.55;color:var(--sub);margin:0 0 15px}
+    .kaori-pick-meta{font-size:10px;font-weight:800;letter-spacing:.05em;color:var(--peach);margin-top:auto}
+    .kaori-game-card{min-height:220px;border:1px solid var(--line);border-radius:21px;background:radial-gradient(circle at 100% 0%,color-mix(in srgb,var(--game-accent) 20%,transparent),transparent 64%),var(--panel);padding:24px;transition:transform .2s,border-color .2s;display:flex;flex-direction:column}
+    .kaori-game-symbol{font-size:27px;display:grid;place-items:center;width:49px;height:49px;border-radius:15px;background:color-mix(in srgb,var(--game-accent) 23%,transparent)}
+    .kaori-game-card h3{font:800 clamp(22px,2.4vw,29px)/1.17 'Outfit',sans-serif;margin:18px 0 8px;letter-spacing:-.03em}
+    .kaori-game-card p{font-size:12px;line-height:1.65;color:var(--sub);margin:0 0 17px}
+    .kaori-game-tag{align-self:start;margin-top:auto;font-size:9px;letter-spacing:.12em;font-weight:900;color:var(--game-accent);border:1px solid color-mix(in srgb,var(--game-accent) 38%,transparent);border-radius:50px;padding:7px 11px}
+    .nav .links{gap:clamp(8px,1.3vw,19px)}.nav .links a{font-size:12px}
+    @media(max-width:900px){.kaori-pick-grid,.kaori-game-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:600px){.kaori-library,.kaori-games{padding-top:75px}.kaori-collection-header{display:block}.kaori-collection-header p{margin-top:10px}.kaori-pick-grid,.kaori-game-grid{grid-template-columns:1fr}.kaori-pick{min-height:175px}.kaori-game-card{min-height:200px}.kaori-collection + .kaori-collection{margin-top:42px}}
   </style>
   <style id="kaori-editor-styles">
 /* KAORI Visual Studio — these styles only appear inside editor mode. */
@@ -243,6 +274,8 @@ html.kaori-edit-mode .kaori-selected {outline:3px solid #f3b9ff!important;outlin
       <div class="links" id="nav-links">
         <a href="#home" class="active">Home</a>
         <a href="#favorites">Favourites</a>
+        <a href="#anime-library">Anime List</a>
+        <a href="#games">Games</a>
         <a href="#edits">My edit room</a>
         <a href="#about">About me</a>
         <a href="#connect">Let's connect</a>
@@ -315,6 +348,201 @@ html.kaori-edit-mode .kaori-selected {outline:3px solid #f3b9ff!important;outlin
           </article>
         </div>
         <div class="favorite-action reveal"><button class="tiny-link" id="surprise-btn" type="button">✧ Surprise me with a favourite →</button></div>
+      </div>
+    </section>
+
+    <section class="kaori-library" id="anime-library" aria-labelledby="anime-library-heading">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div><span class="small-label">02 / ANIME ARCHIVE</span>
+            <h2 class="heading" id="anime-library-heading"><span data-kaori-text="libraryHeading">Anime on my</span> <em><span data-kaori-text="libraryAccent">radar</span></em> ✦</h2>
+          </div>
+          <p class="section-desc"><span data-kaori-text="libraryDescription">A mix of hyped series, classic girl-led shows and creepy horror picks. This is a starter watchlist — not a claim that I&#39;ve finished them all.</span></p>
+        </div>
+        <div class="kaori-collection kaori-collection-trending">
+    <div class="kaori-collection-header">
+      <div><span class="kaori-collection-kicker">★ HOT PICKS</span>
+      <h3><span data-kaori-text="librarytrendingGroup">Trending &amp; fan favorites</span></h3></div>
+      <p><span data-kaori-text="librarytrendingIntro">Popular action, fantasy and talked-about shows.</span></p>
+    </div>
+    <div class="kaori-pick-grid">
+      <article class="kaori-pick kaori-pick-trending">
+        <div class="kaori-pick-top"><span class="kaori-pick-emoji" aria-hidden="true">⚔️</span><span class="kaori-pick-no">01</span></div>
+        <h4><span data-kaori-text="librarytrending1Title">Black Clover: Season 2</span></h4>
+        <p><span data-kaori-text="librarytrending1Desc">Magic, rivalries and the next big chapter.</span></p>
+        <span class="kaori-pick-meta">2026 return</span>
+      </article>
+      <article class="kaori-pick kaori-pick-trending">
+        <div class="kaori-pick-top"><span class="kaori-pick-emoji" aria-hidden="true">🧪</span><span class="kaori-pick-no">02</span></div>
+        <h4><span data-kaori-text="librarytrending2Title">The Apothecary Diaries</span></h4>
+        <p><span data-kaori-text="librarytrending2Desc">Mysteries, palace intrigue and Maomao&#39;s deductions.</span></p>
+        <span class="kaori-pick-meta">Mystery · Drama</span>
+      </article>
+      <article class="kaori-pick kaori-pick-trending">
+        <div class="kaori-pick-top"><span class="kaori-pick-emoji" aria-hidden="true">👽</span><span class="kaori-pick-no">03</span></div>
+        <h4><span data-kaori-text="librarytrending3Title">DAN DA DAN</span></h4>
+        <p><span data-kaori-text="librarytrending3Desc">Aliens, spirits and chaotic supernatural action.</span></p>
+        <span class="kaori-pick-meta">Action · Supernatural</span>
+      </article>
+      <article class="kaori-pick kaori-pick-trending">
+        <div class="kaori-pick-top"><span class="kaori-pick-emoji" aria-hidden="true">🌙</span><span class="kaori-pick-no">04</span></div>
+        <h4><span data-kaori-text="librarytrending4Title">Frieren: Beyond Journey&#39;s End</span></h4>
+        <p><span data-kaori-text="librarytrending4Desc">A quiet fantasy journey about time and memories.</span></p>
+        <span class="kaori-pick-meta">Fantasy · Adventure</span>
+      </article>
+      <article class="kaori-pick kaori-pick-trending">
+        <div class="kaori-pick-top"><span class="kaori-pick-emoji" aria-hidden="true">⚡</span><span class="kaori-pick-no">05</span></div>
+        <h4><span data-kaori-text="librarytrending5Title">Solo Leveling</span></h4>
+        <p><span data-kaori-text="librarytrending5Desc">From the weakest hunter to overwhelming power.</span></p>
+        <span class="kaori-pick-meta">Action · Fantasy</span>
+      </article>
+      <article class="kaori-pick kaori-pick-trending">
+        <div class="kaori-pick-top"><span class="kaori-pick-emoji" aria-hidden="true">🔥</span><span class="kaori-pick-no">06</span></div>
+        <h4><span data-kaori-text="librarytrending6Title">Jujutsu Kaisen</span></h4>
+        <p><span data-kaori-text="librarytrending6Desc">Curses, sorcerers and unforgettable battles.</span></p>
+        <span class="kaori-pick-meta">Action · Dark fantasy</span>
+      </article>
+    </div>
+  </div>
+        <div class="kaori-collection kaori-collection-classics">
+    <div class="kaori-collection-header">
+      <div><span class="kaori-collection-kicker">♪ NOSTALGIA</span>
+      <h3><span data-kaori-text="libraryclassicsGroup">Classic all-girl casts</span></h3></div>
+      <p><span data-kaori-text="libraryclassicsIntro">Nostalgic school life, music, comedy and friendship.</span></p>
+    </div>
+    <div class="kaori-pick-grid">
+      <article class="kaori-pick kaori-pick-classics">
+        <div class="kaori-pick-top"><span class="kaori-pick-emoji" aria-hidden="true">🎸</span><span class="kaori-pick-no">01</span></div>
+        <h4><span data-kaori-text="libraryclassics1Title">K-On!</span></h4>
+        <p><span data-kaori-text="libraryclassics1Desc">The light music club&#39;s tea, friendship and songs.</span></p>
+        <span class="kaori-pick-meta">2009 · Music</span>
+      </article>
+      <article class="kaori-pick kaori-pick-classics">
+        <div class="kaori-pick-top"><span class="kaori-pick-emoji" aria-hidden="true">⭐</span><span class="kaori-pick-no">02</span></div>
+        <h4><span data-kaori-text="libraryclassics2Title">Lucky Star</span></h4>
+        <p><span data-kaori-text="libraryclassics2Desc">Everyday comedy with Konata and her friends.</span></p>
+        <span class="kaori-pick-meta">2007 · Comedy</span>
+      </article>
+      <article class="kaori-pick kaori-pick-classics">
+        <div class="kaori-pick-top"><span class="kaori-pick-emoji" aria-hidden="true">📚</span><span class="kaori-pick-no">03</span></div>
+        <h4><span data-kaori-text="libraryclassics3Title">Azumanga Daioh</span></h4>
+        <p><span data-kaori-text="libraryclassics3Desc">Classic school-life humor with an unforgettable girls&#39; class.</span></p>
+        <span class="kaori-pick-meta">2002 · Slice of life</span>
+      </article>
+      <article class="kaori-pick kaori-pick-classics">
+        <div class="kaori-pick-top"><span class="kaori-pick-emoji" aria-hidden="true">🎨</span><span class="kaori-pick-no">04</span></div>
+        <h4><span data-kaori-text="libraryclassics4Title">Hidamari Sketch</span></h4>
+        <p><span data-kaori-text="libraryclassics4Desc">Art-school girls sharing sunny everyday moments.</span></p>
+        <span class="kaori-pick-meta">2007 · Art · Slice of life</span>
+      </article>
+      <article class="kaori-pick kaori-pick-classics">
+        <div class="kaori-pick-top"><span class="kaori-pick-emoji" aria-hidden="true">🍵</span><span class="kaori-pick-no">05</span></div>
+        <h4><span data-kaori-text="libraryclassics5Title">YuruYuri</span></h4>
+        <p><span data-kaori-text="libraryclassics5Desc">A lighthearted girls&#39; club full of fun and friendship.</span></p>
+        <span class="kaori-pick-meta">2011 · Comedy</span>
+      </article>
+      <article class="kaori-pick kaori-pick-classics">
+        <div class="kaori-pick-top"><span class="kaori-pick-emoji" aria-hidden="true">☀️</span><span class="kaori-pick-no">06</span></div>
+        <h4><span data-kaori-text="libraryclassics6Title">Love Live! School Idol Project</span></h4>
+        <p><span data-kaori-text="libraryclassics6Desc">Honoka and μ&#39;s chase their school idol dreams.</span></p>
+        <span class="kaori-pick-meta">2013 · Idols · Music</span>
+      </article>
+    </div>
+  </div>
+        <div class="kaori-collection kaori-collection-horror">
+    <div class="kaori-collection-header">
+      <div><span class="kaori-collection-kicker">☾ NIGHT WATCH</span>
+      <h3><span data-kaori-text="libraryhorrorGroup">Horror after dark</span></h3></div>
+      <p><span data-kaori-text="libraryhorrorIntro">Ghost stories, mysteries and unsettling atmosphere.</span></p>
+    </div>
+    <div class="kaori-pick-grid">
+      <article class="kaori-pick kaori-pick-horror">
+        <div class="kaori-pick-top"><span class="kaori-pick-emoji" aria-hidden="true">👁️</span><span class="kaori-pick-no">01</span></div>
+        <h4><span data-kaori-text="libraryhorror1Title">Another</span></h4>
+        <p><span data-kaori-text="libraryhorror1Desc">A cursed classroom and a deadly mystery.</span></p>
+        <span class="kaori-pick-meta">2012 · Mystery horror</span>
+      </article>
+      <article class="kaori-pick kaori-pick-horror">
+        <div class="kaori-pick-top"><span class="kaori-pick-emoji" aria-hidden="true">🌑</span><span class="kaori-pick-no">02</span></div>
+        <h4><span data-kaori-text="libraryhorror2Title">Higurashi: When They Cry</span></h4>
+        <p><span data-kaori-text="libraryhorror2Desc">A seemingly peaceful village hides a terrifying secret.</span></p>
+        <span class="kaori-pick-meta">2006 · Psychological horror</span>
+      </article>
+      <article class="kaori-pick kaori-pick-horror">
+        <div class="kaori-pick-top"><span class="kaori-pick-emoji" aria-hidden="true">🦇</span><span class="kaori-pick-no">03</span></div>
+        <h4><span data-kaori-text="libraryhorror3Title">Shiki</span></h4>
+        <p><span data-kaori-text="libraryhorror3Desc">A remote village faces a chilling mystery.</span></p>
+        <span class="kaori-pick-meta">2010 · Supernatural horror</span>
+      </article>
+      <article class="kaori-pick kaori-pick-horror">
+        <div class="kaori-pick-top"><span class="kaori-pick-emoji" aria-hidden="true">👻</span><span class="kaori-pick-no">04</span></div>
+        <h4><span data-kaori-text="libraryhorror4Title">Mieruko-chan</span></h4>
+        <p><span data-kaori-text="libraryhorror4Desc">A student ignores the terrifying spirits only she can see.</span></p>
+        <span class="kaori-pick-meta">2021 · Supernatural</span>
+      </article>
+      <article class="kaori-pick kaori-pick-horror">
+        <div class="kaori-pick-top"><span class="kaori-pick-emoji" aria-hidden="true">🕯️</span><span class="kaori-pick-no">05</span></div>
+        <h4><span data-kaori-text="libraryhorror5Title">Dark Gathering</span></h4>
+        <p><span data-kaori-text="libraryhorror5Desc">Ghost hunting with a genuinely creepy twist.</span></p>
+        <span class="kaori-pick-meta">2023 · Horror</span>
+      </article>
+      <article class="kaori-pick kaori-pick-horror">
+        <div class="kaori-pick-top"><span class="kaori-pick-emoji" aria-hidden="true">🌹</span><span class="kaori-pick-no">06</span></div>
+        <h4><span data-kaori-text="libraryhorror6Title">Hell Girl</span></h4>
+        <p><span data-kaori-text="libraryhorror6Desc">A haunting anthology of grudges and revenge.</span></p>
+        <span class="kaori-pick-meta">2005 · Supernatural horror</span>
+      </article>
+    </div>
+  </div>
+      </div>
+    </section>
+
+    <section class="kaori-games" id="games" aria-labelledby="games-heading">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div><span class="small-label">03 / PLAYER ONE'S LOADOUT</span>
+            <h2 class="heading" id="games-heading"><span data-kaori-text="gamesHeading">My favorite</span> <em><span data-kaori-text="gamesAccent">games</span></em> 🎮</h2>
+          </div>
+          <p class="section-desc"><span data-kaori-text="gamesDescription">From open-world adventures to competitive matches, these are the games in KAORI&#39;s rotation.</span></p>
+        </div>
+        <div class="kaori-game-grid">
+          <article class="kaori-game-card" style="--game-accent:#78d4d5">
+            <div class="kaori-game-top"><span class="kaori-game-symbol" aria-hidden="true">🌊</span><span class="kaori-game-index">GAME / 01</span></div>
+            <h3><span data-kaori-text="game1Title">Wuthering Waves</span></h3>
+            <p><span data-kaori-text="game1Desc">Open-world action RPG · exploration and stylish combat.</span></p>
+            <span class="kaori-game-tag">OPEN WORLD RPG</span>
+          </article>
+          <article class="kaori-game-card" style="--game-accent:#efc57b">
+            <div class="kaori-game-top"><span class="kaori-game-symbol" aria-hidden="true">✨</span><span class="kaori-game-index">GAME / 02</span></div>
+            <h3><span data-kaori-text="game2Title">Genshin Impact</span></h3>
+            <p><span data-kaori-text="game2Desc">Explore Teyvat, collect characters and build your dream team.</span></p>
+            <span class="kaori-game-tag">OPEN WORLD RPG</span>
+          </article>
+          <article class="kaori-game-card" style="--game-accent:#ff7582">
+            <div class="kaori-game-top"><span class="kaori-game-symbol" aria-hidden="true">🎯</span><span class="kaori-game-index">GAME / 03</span></div>
+            <h3><span data-kaori-text="game3Title">VALORANT</span></h3>
+            <p><span data-kaori-text="game3Desc">Tactical 5v5 FPS · agents, teamwork and clutch rounds.</span></p>
+            <span class="kaori-game-tag">TACTICAL FPS</span>
+          </article>
+          <article class="kaori-game-card" style="--game-accent:#d98b72">
+            <div class="kaori-game-top"><span class="kaori-game-symbol" aria-hidden="true">⚔️</span><span class="kaori-game-index">GAME / 04</span></div>
+            <h3><span data-kaori-text="game4Title">Dota 2</span></h3>
+            <p><span data-kaori-text="game4Desc">The classic competitive MOBA with deep team strategy.</span></p>
+            <span class="kaori-game-tag">MOBA</span>
+          </article>
+          <article class="kaori-game-card" style="--game-accent:#b7b7ff">
+            <div class="kaori-game-top"><span class="kaori-game-symbol" aria-hidden="true">🧱</span><span class="kaori-game-index">GAME / 05</span></div>
+            <h3><span data-kaori-text="game5Title">Roblox</span></h3>
+            <p><span data-kaori-text="game5Desc">Endless game worlds, creativity and adventures with friends.</span></p>
+            <span class="kaori-game-tag">CREATIVE PLATFORM</span>
+          </article>
+          <article class="kaori-game-card" style="--game-accent:#bca9f9">
+            <div class="kaori-game-top"><span class="kaori-game-symbol" aria-hidden="true">🚀</span><span class="kaori-game-index">GAME / 06</span></div>
+            <h3><span data-kaori-text="game6Title">Honkai: Star Rail</span></h3>
+            <p><span data-kaori-text="game6Desc">Turn-based adventures across the stars.</span></p>
+            <span class="kaori-game-tag">TURN-BASED RPG</span>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -433,7 +661,7 @@ html.kaori-edit-mode .kaori-selected {outline:3px solid #f3b9ff!important;outlin
   const STORE_KEY = 'kaori-visual-studio-v1';
   const $ = (selector, root = document) => root.querySelector(selector);
   const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
-  const sectionNames = {favorites:'Anime favourites',edits:'Fan edit room',about:'About me',connect:'Connect & socials'};
+  const sectionNames = {favorites:'Anime favourites','anime-library':'Anime library',games:'Favourite games',edits:'Fan edit room',about:'About me',connect:'Connect & socials'};
   const textGroups = [
     ['WELCOME / HOME', [
       ['welcome','Small welcome caption','.hero .eyebrow'],
@@ -457,6 +685,70 @@ html.kaori-edit-mode .kaori-selected {outline:3px solid #f3b9ff!important;outlin
       ['anime2Desc','Second anime description','#favorites .anime-card:nth-child(2) .card-info p'],
       ['anime3Title','Third anime title','#favorites .anime-card:nth-child(3) h3'],
       ['anime3Desc','Third anime description','#favorites .anime-card:nth-child(3) .card-info p']
+    ]],
+    ['ANIME LIBRARY', [
+      ['libraryHeading','Anime archive heading','[data-kaori-text="libraryHeading"]'],
+      ['libraryAccent','Anime archive heading accent','[data-kaori-text="libraryAccent"]'],
+      ['libraryDescription','Anime archive introduction','[data-kaori-text="libraryDescription"]'],
+      ['librarytrendingGroup','Trending & fan favorites category title','[data-kaori-text="librarytrendingGroup"]'],
+      ['librarytrendingIntro','Trending & fan favorites category subtitle','[data-kaori-text="librarytrendingIntro"]'],
+      ['librarytrending1Title','Trending & fan favorites: anime 1 title','[data-kaori-text="librarytrending1Title"]'],
+      ['librarytrending1Desc','Trending & fan favorites: anime 1 description','[data-kaori-text="librarytrending1Desc"]'],
+      ['librarytrending2Title','Trending & fan favorites: anime 2 title','[data-kaori-text="librarytrending2Title"]'],
+      ['librarytrending2Desc','Trending & fan favorites: anime 2 description','[data-kaori-text="librarytrending2Desc"]'],
+      ['librarytrending3Title','Trending & fan favorites: anime 3 title','[data-kaori-text="librarytrending3Title"]'],
+      ['librarytrending3Desc','Trending & fan favorites: anime 3 description','[data-kaori-text="librarytrending3Desc"]'],
+      ['librarytrending4Title','Trending & fan favorites: anime 4 title','[data-kaori-text="librarytrending4Title"]'],
+      ['librarytrending4Desc','Trending & fan favorites: anime 4 description','[data-kaori-text="librarytrending4Desc"]'],
+      ['librarytrending5Title','Trending & fan favorites: anime 5 title','[data-kaori-text="librarytrending5Title"]'],
+      ['librarytrending5Desc','Trending & fan favorites: anime 5 description','[data-kaori-text="librarytrending5Desc"]'],
+      ['librarytrending6Title','Trending & fan favorites: anime 6 title','[data-kaori-text="librarytrending6Title"]'],
+      ['librarytrending6Desc','Trending & fan favorites: anime 6 description','[data-kaori-text="librarytrending6Desc"]'],
+      ['libraryclassicsGroup','Classic all-girl casts category title','[data-kaori-text="libraryclassicsGroup"]'],
+      ['libraryclassicsIntro','Classic all-girl casts category subtitle','[data-kaori-text="libraryclassicsIntro"]'],
+      ['libraryclassics1Title','Classic all-girl casts: anime 1 title','[data-kaori-text="libraryclassics1Title"]'],
+      ['libraryclassics1Desc','Classic all-girl casts: anime 1 description','[data-kaori-text="libraryclassics1Desc"]'],
+      ['libraryclassics2Title','Classic all-girl casts: anime 2 title','[data-kaori-text="libraryclassics2Title"]'],
+      ['libraryclassics2Desc','Classic all-girl casts: anime 2 description','[data-kaori-text="libraryclassics2Desc"]'],
+      ['libraryclassics3Title','Classic all-girl casts: anime 3 title','[data-kaori-text="libraryclassics3Title"]'],
+      ['libraryclassics3Desc','Classic all-girl casts: anime 3 description','[data-kaori-text="libraryclassics3Desc"]'],
+      ['libraryclassics4Title','Classic all-girl casts: anime 4 title','[data-kaori-text="libraryclassics4Title"]'],
+      ['libraryclassics4Desc','Classic all-girl casts: anime 4 description','[data-kaori-text="libraryclassics4Desc"]'],
+      ['libraryclassics5Title','Classic all-girl casts: anime 5 title','[data-kaori-text="libraryclassics5Title"]'],
+      ['libraryclassics5Desc','Classic all-girl casts: anime 5 description','[data-kaori-text="libraryclassics5Desc"]'],
+      ['libraryclassics6Title','Classic all-girl casts: anime 6 title','[data-kaori-text="libraryclassics6Title"]'],
+      ['libraryclassics6Desc','Classic all-girl casts: anime 6 description','[data-kaori-text="libraryclassics6Desc"]'],
+      ['libraryhorrorGroup','Horror after dark category title','[data-kaori-text="libraryhorrorGroup"]'],
+      ['libraryhorrorIntro','Horror after dark category subtitle','[data-kaori-text="libraryhorrorIntro"]'],
+      ['libraryhorror1Title','Horror after dark: anime 1 title','[data-kaori-text="libraryhorror1Title"]'],
+      ['libraryhorror1Desc','Horror after dark: anime 1 description','[data-kaori-text="libraryhorror1Desc"]'],
+      ['libraryhorror2Title','Horror after dark: anime 2 title','[data-kaori-text="libraryhorror2Title"]'],
+      ['libraryhorror2Desc','Horror after dark: anime 2 description','[data-kaori-text="libraryhorror2Desc"]'],
+      ['libraryhorror3Title','Horror after dark: anime 3 title','[data-kaori-text="libraryhorror3Title"]'],
+      ['libraryhorror3Desc','Horror after dark: anime 3 description','[data-kaori-text="libraryhorror3Desc"]'],
+      ['libraryhorror4Title','Horror after dark: anime 4 title','[data-kaori-text="libraryhorror4Title"]'],
+      ['libraryhorror4Desc','Horror after dark: anime 4 description','[data-kaori-text="libraryhorror4Desc"]'],
+      ['libraryhorror5Title','Horror after dark: anime 5 title','[data-kaori-text="libraryhorror5Title"]'],
+      ['libraryhorror5Desc','Horror after dark: anime 5 description','[data-kaori-text="libraryhorror5Desc"]'],
+      ['libraryhorror6Title','Horror after dark: anime 6 title','[data-kaori-text="libraryhorror6Title"]'],
+      ['libraryhorror6Desc','Horror after dark: anime 6 description','[data-kaori-text="libraryhorror6Desc"]']
+    ]],
+    ['FAVORITE GAMES', [
+      ['gamesHeading','Games heading','[data-kaori-text="gamesHeading"]'],
+      ['gamesAccent','Games heading accent','[data-kaori-text="gamesAccent"]'],
+      ['gamesDescription','Games section introduction','[data-kaori-text="gamesDescription"]'],
+      ['game1Title','Favorite game 1 title','[data-kaori-text="game1Title"]'],
+      ['game1Desc','Favorite game 1 description','[data-kaori-text="game1Desc"]'],
+      ['game2Title','Favorite game 2 title','[data-kaori-text="game2Title"]'],
+      ['game2Desc','Favorite game 2 description','[data-kaori-text="game2Desc"]'],
+      ['game3Title','Favorite game 3 title','[data-kaori-text="game3Title"]'],
+      ['game3Desc','Favorite game 3 description','[data-kaori-text="game3Desc"]'],
+      ['game4Title','Favorite game 4 title','[data-kaori-text="game4Title"]'],
+      ['game4Desc','Favorite game 4 description','[data-kaori-text="game4Desc"]'],
+      ['game5Title','Favorite game 5 title','[data-kaori-text="game5Title"]'],
+      ['game5Desc','Favorite game 5 description','[data-kaori-text="game5Desc"]'],
+      ['game6Title','Favorite game 6 title','[data-kaori-text="game6Title"]'],
+      ['game6Desc','Favorite game 6 description','[data-kaori-text="game6Desc"]']
     ]],
     ['FAN EDITS', [
       ['editsHeading','Section title','[data-kaori-text="editsHeading"]'],
