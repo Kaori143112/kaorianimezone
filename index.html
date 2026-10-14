@@ -175,6 +175,11 @@
     .kaori-party-disc{position:absolute;width:143px;height:143px;border-radius:50%;background:radial-gradient(circle,#fff9 0%,var(--event) 26%,color-mix(in srgb,var(--event2) 50%,transparent) 53%,transparent 72%);opacity:.67;animation:kaoriPulse 2s ease-in-out infinite}
     #kaori-party-image{height:135px;width:135px;border:4px solid #fff9;border-radius:25px;object-fit:cover;z-index:1;box-shadow:0 12px 40px #0007;transform:rotate(-7deg)}
     #kaori-party-icon{position:relative;z-index:1;font-size:93px;line-height:1;filter:drop-shadow(0 8px 14px #1119)}
+    .kaori-party-guest{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px 10px;margin:-3px auto 12px;padding:7px 12px;max-width:100%;border:1px solid color-mix(in srgb,var(--event) 40%,transparent);border-radius:13px;background:color-mix(in srgb,var(--event) 10%,transparent);width:max-content}
+    .kaori-party-guest strong{font:900 12px 'Outfit',sans-serif;color:var(--event);letter-spacing:.025em}
+    .kaori-party-guest span{font:800 9px 'Outfit',sans-serif;color:#e6e1ed;letter-spacing:.08em}
+    #kaori-party-image{object-position:center 26%;animation:kaoriGuestFloat 2.6s ease-in-out infinite}
+    @keyframes kaoriGuestFloat{0%,100%{translate:0 0}50%{translate:0 -5px}}
     .kaori-party-title{font:900 clamp(28px,6vw,40px)/1.05 'Outfit',sans-serif;letter-spacing:-.04em;text-shadow:0 3px 22px color-mix(in srgb,var(--event) 60%,transparent)}
     .kaori-party-subtitle{font-size:12px;color:#e0dbea;margin:9px 0 16px;line-height:1.6}
     .kaori-party-quote{background:#0f1225;border:1px solid color-mix(in srgb,var(--event) 44%,transparent);border-radius:17px;padding:13px 17px;text-align:left}
@@ -688,6 +693,7 @@ html.kaori-edit-mode .kaori-selected {outline:3px solid #f3b9ff!important;outlin
     <div class="kaori-party-card" role="status" aria-live="polite">
       <div class="kaori-party-top"><span class="kaori-party-badge" id="kaori-party-badge">EVENT ACTIVATED</span><button class="kaori-party-close" type="button" id="kaori-party-close" aria-label="Close animation">×</button></div>
       <div class="kaori-party-visual"><div class="kaori-party-disc"></div><img id="kaori-party-image" alt="" hidden/><span id="kaori-party-icon" aria-hidden="true">✦</span></div>
+      <div class="kaori-party-guest" id="kaori-party-guest"><strong id="kaori-party-guest-name">Mystery anime guest</strong><span id="kaori-party-guest-series">RANDOM CHARACTER APPEARS!</span></div>
       <div class="kaori-party-title" id="kaori-party-title">SPECIAL MOVE!</div>
       <p class="kaori-party-subtitle" id="kaori-party-subtitle">Message received by your browser</p>
       <div class="kaori-party-quote"><span>YOUR MESSAGE</span><p id="kaori-party-message"></p></div>
@@ -754,6 +760,8 @@ html.kaori-edit-mode .kaori-selected {outline:3px solid #f3b9ff!important;outlin
       const partyMessage = document.getElementById('kaori-party-message');
       const partyImage = document.getElementById('kaori-party-image');
       const partyIcon = document.getElementById('kaori-party-icon');
+      const guestName = document.getElementById('kaori-party-guest-name');
+      const guestSeries = document.getElementById('kaori-party-guest-series');
       const guestbook = document.getElementById('kaori-guestbook');
       const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
       const partyEvents = [
@@ -763,6 +771,19 @@ html.kaori-edit-mode .kaori-selected {outline:3px solid #f3b9ff!important;outlin
         {theme:'cosmic',badge:'STAR RAIL MOMENT',title:'ASTRAL WARP!',subtitle:'A message from another galaxy has arrived.',icon:'🚀',sparks:['🌠','⭐','💫'],art:null},
         {theme:'anime',badge:'ANIME CUT-IN',title:'POWER-UP MODE!',subtitle:'The main character has entered the scene.',icon:'🌸',sparks:['🌸','✨','💖'],art:'anime'}
       ];
+      // Random anime character cut-ins; the existing Honoka image is the built-in offline fallback.
+      const animeGuests = [
+        {name:'Honoka Kousaka',series:'LOVE LIVE!',image:'honoka',emoji:'☀️'},
+        {name:'Frieren',series:"FRIEREN: BEYOND JOURNEY'S END",image:'https://cdn.rafled.com/anime-icons/images/RBrbYipj7MuX.jpg',emoji:'🪄'},
+        {name:'Satoru Gojo',series:'JUJUTSU KAISEN',image:'https://avatarfiles.alphacoders.com/377/377447.jpg',emoji:'💠'},
+        {name:'Anya Forger',series:'SPY × FAMILY',image:'https://cdn.rafled.com/anime-icons/images/9d812cba92a4a411bc462c222b5454f9600ffcbee3ac0a54555cf869d5e258fb.jpg',emoji:'🥜'},
+        {name:'Megumin',series:'KONOSUBA',image:'https://cdn.rafled.com/anime-icons/images/EKbqAeA5cwRn.jpg',emoji:'💥'},
+        {name:'Marin Kitagawa',series:'MY DRESS-UP DARLING',image:'https://cdn.rafled.com/anime-icons/images/05b2c8168228891eb90ede3a0cab2f869f0b38ed3536d22eb01ce94070f509bf.jpg',emoji:'💗'},
+        {name:'Yui Hirasawa',series:'K-ON!',image:'https://cdn.rafled.com/anime-icons/images/cy5632ihhtUR.jpg',emoji:'🎸'},
+        {name:'Maomao',series:'THE APOTHECARY DIARIES',image:'https://thicc-uwu.mywaifulist.moe/waifus/maomao/Vd9mQYAEU7V9HT01skfrSYoLBCwmf0FbxutWjCAR.jpg?width=600',emoji:'🧪'}
+      ];
+      let lastAnimeGuest=-1;
+      let partyImageToken=0;
       let wishes = [];
       try {
         const existing = JSON.parse(localStorage.getItem('kaori-local-wishes-v2') || '[]');
@@ -788,6 +809,7 @@ html.kaori-edit-mode .kaori-selected {outline:3px solid #f3b9ff!important;outlin
       }
       renderWishLog();
       function closeKaoriParty(){
+        partyImageToken++;
         clearTimeout(closeKaoriParty.timer);
         partyLayer.hidden = true;
         partyLayer.setAttribute('aria-hidden','true');
@@ -803,24 +825,41 @@ html.kaori-edit-mode .kaori-selected {outline:3px solid #f3b9ff!important;outlin
         document.getElementById('kaori-party-title').textContent=event.title;
         document.getElementById('kaori-party-subtitle').textContent=event.subtitle;
         partyMessage.textContent=msg;
-        partyIcon.textContent=event.icon;
-        partyIcon.hidden=false;
-        partyImage.hidden=true;
-        partyImage.removeAttribute('src');
-        let art='';
-        if(event.art==='honoka')art=document.querySelector('.honoka-image')?.currentSrc || '';
-        if(event.art==='anime'){
-          const options=Array.from(document.querySelectorAll('#favorites .anime-card img')).filter(img=>img.complete && img.naturalWidth>0);
-          if(options.length) art=options[Math.floor(Math.random()*options.length)].currentSrc;
-        }
-        if(art) {
-          partyImage.onerror=()=>{partyImage.hidden=true;partyIcon.hidden=false;};
-          partyImage.onload=()=>{if(!partyLayer.hidden){partyImage.hidden=false;partyIcon.hidden=true;}};
-          partyImage.src=art;
-          if(partyImage.complete && partyImage.naturalWidth>0){partyImage.hidden=false;partyIcon.hidden=true;}
-        }
+        // Pick a new recognizable character on every message. Sunshine Rush always stars Honoka.
+        let guestIndex=event.theme==='honoka'?0:Math.floor(Math.random()*animeGuests.length);
+        if(event.theme!=='honoka' && guestIndex===lastAnimeGuest)guestIndex=(guestIndex+1+Math.floor(Math.random()*(animeGuests.length-1)))%animeGuests.length;
+        lastAnimeGuest=guestIndex;
+        const imageToken=++partyImageToken;
         partyLayer.hidden=false;
         partyLayer.setAttribute('aria-hidden','false');
+        function showAnimeGuest(index,remaining){
+          if(imageToken!==partyImageToken)return;
+          const guest=animeGuests[index];
+          guestName.textContent=guest.name;
+          guestSeries.textContent=guest.series;
+          partyIcon.textContent=guest.emoji;
+          partyIcon.hidden=false;
+          partyImage.hidden=true;
+          partyImage.alt=guest.name+' from '+guest.series;
+          partyImage.onload=()=>{
+            if(imageToken!==partyImageToken || partyLayer.hidden)return;
+            partyImage.hidden=false;
+            partyIcon.hidden=true;
+          };
+          partyImage.onerror=()=>{
+            if(imageToken!==partyImageToken || partyLayer.hidden)return;
+            if(remaining>0){showAnimeGuest((index+1)%animeGuests.length,remaining-1);return;}
+            // The KAORI site contains a built-in Honoka portrait, so no guest goes blank.
+            if(index!==0){showAnimeGuest(0,0);return;}
+            partyImage.hidden=true;
+            partyIcon.hidden=false;
+          };
+          const portrait=guest.image==='honoka'?(window.KAORI_PROFILE_SRC || document.querySelector('.honoka-image')?.currentSrc):guest.image;
+          if(portrait)partyImage.src=portrait;
+          else partyImage.onerror();
+          if(partyImage.complete && partyImage.naturalWidth>0)partyImage.onload();
+        }
+        showAnimeGuest(guestIndex,animeGuests.length-1);
         guestbook.classList.remove('kaori-guestbook-glow');
         void guestbook.offsetWidth;
         guestbook.classList.add('kaori-guestbook-glow');
